@@ -1,10 +1,12 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 
 import NavBar from "./components/NavBar";
 import NavbarVertical from "./components/NavBarVertical";
+import Home from "./components/Home";
+import Album from "./components/Ablum";
 
 function App() {
   return (
@@ -12,6 +14,8 @@ function App() {
       <BrowserRouter>
         <NavBar />
         <NavbarVertical />
+        <Route path="/" exact render={() => <Home />} />
+        <Route path="/album:id" exact component={Album} />
       </BrowserRouter>
     </div>
   );
