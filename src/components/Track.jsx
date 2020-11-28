@@ -13,7 +13,7 @@ const Track = (props) => {
         />
         <div className='btn-container'>
           <button>
-            <i class="fas fa-play text-white"></i>
+            <div className='arrow-right'></div>
           </button>
         </div>
       </div>
