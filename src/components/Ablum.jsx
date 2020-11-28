@@ -5,7 +5,7 @@ const Album = () => {
   return (
     <Jumbotron>
       <Container>
-        <div className='d-flex align-items-end'>
+        <div className='d-flex align-items-end bg-dark'>
           <div>
             <Image className='rounded' style={{ width: '200px' }} alt="img" src='' />
           </div>

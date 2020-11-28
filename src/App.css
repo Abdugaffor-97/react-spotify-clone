@@ -16,12 +16,17 @@
   min-height: 0;
   user-select: none;
   cursor: default;
+  background-color: #000000;
 }
 
 .navbar-vertical ul {
   list-style: none;
   margin: 0;
-  padding-left: 24px;
+  padding-left: 20px;
+}
+
+.navbar-vertical li {
+  width: 205px;
 }
 
 .navbar-vertical svg,
@@ -66,6 +71,15 @@ h1 {
   display: inline;
 }
 
+.current-page {
+  background-color: #282828;
+  border-radius: 5px;
+}
+.current-page svg,
+.current-page h1 {
+  color: #ffffff;
+}
+
 /* backgroundColor: '#040404', width: '234px' */
 
 .playlist {
@@ -79,11 +93,57 @@ h1 {
 /* End of Navbar vertical */
 
 /* Main section  */
-.mainGrid {
-  display: grid;
-  grid-gap: 24px;
-  grid-template-columns: repeat(auto-fill, minmax(188px));
+.track-container {
+  background-color: #181818;
+  border-radius: 4px;
+  margin: 10px;
+  padding-top: 15px;
+  cursor: pointer;
 }
+
+.img-container img {
+  margin-bottom: 15px;
+}
+
+.img-container .btn-container {
+  bottom: 90px;
+  left: 140px;
+  border-radius: 50%;
+  padding: 5px;
+  position: absolute;
+  transform: translateX(8px)
+}
+
+.img-container .btn-container button {
+  background-color: #1db954;
+  border-radius: 50%;
+  border: none;
+  position: relative;
+  padding: 7px 13px;
+  cursor: default;
+}
+
+.track-body {
+  text-align: start;
+}
+
+.track-body > * {
+  margin-left: 15px;
+}
+
+.track-body {
+  padding-bottom: 15px;
+}
+
+.track-body a {
+  color: #ffffff;
+}
+
+.col {
+  padding: 0;
+  text-align: center;
+}
+/*End of Main section  */
 
 .card-body {
   background-color: #181818;

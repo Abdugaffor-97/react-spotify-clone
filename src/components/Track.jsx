@@ -1,17 +1,31 @@
-const { Card } = require("react-bootstrap")
+import { withRouter } from "react-router-dom"
+
+const { Image } = require("react-bootstrap")
 
 const Track = (props) => {
   return (
-    <Card>
-      <Card.Img variant="top" src={props.img} />
-      <Card.Body>
-        <Card.Text>
-          <h6>{props.title}</h6>
-          <small>{props.artistName}</small>
-        </Card.Text>
-      </Card.Body>
-    </Card>
+    <div className='track-container'>
+      <div className='img-container'>
+        <Image
+          style={{ borderRadius: '10px', width: '85%' }}
+          src={props.img}
+          onClick={() => props.history.push('/album/' + props.id)}
+        />
+        <div className='btn-container'>
+          <button>
+            <i class="fas fa-play text-white"></i>
+          </button>
+        </div>
+      </div>
+
+      <div className='track-body'>
+        <a href="#ss">{props.title}</a>
+        <div>
+          <span>{props.artistName}</span>
+        </div>
+      </div>
+    </div>
   )
 }
 
-export default Track
+export default withRouter(Track)
