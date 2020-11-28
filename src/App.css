@@ -4,11 +4,59 @@
 }
 
 /* Navbar vertical */
-.flex-column {
+.navbar-vertical {
+  position: fixed;
+  width: 235px;
   padding-top: 24px;
+  display: flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-box-flex: 1;
+  flex: 1;
+  min-height: 0;
+  user-select: none;
+  cursor: default;
 }
 
-.flex-column h1 {
+.navbar-vertical ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 24px;
+}
+
+.navbar-vertical svg,
+.navbar-vertical i.fas,
+.navbar-vertical h1 {
+  color: #b2b2b2;
+}
+
+.navbar-vertical ul li:hover h1,
+.navbar-vertical ul li:hover svg {
+  color: white;
+}
+
+.navbar-vertical ul li:hover i.fa-plus {
+  background-color: white;
+}
+
+.navbar-vertical ul li:hover i.fa-heart {
+  background-color: rgb(82, 48, 219);
+}
+
+.navbar-vertical i.fas {
+  padding: 6px;
+}
+
+.navbar-vertical .fas.fa-plus {
+  color: #414141;
+  background-color: #b2b2b2;
+}
+
+.navbar-vertical .fas.fa-heart {
+  background-color: rgb(65, 39, 167);
+}
+
+h1 {
   font-size: 12px;
   font-weight: 700;
   line-height: 16px;
@@ -16,14 +64,11 @@
   margin-left: 20px;
   margin-top: 20px;
   display: inline;
-  color: #b2b2b2;
 }
 
-.flex-column i {
-  padding: 6px;
-}
+/* backgroundColor: '#040404', width: '234px' */
 
-.flex-column .playlist {
+.playlist {
   color: white;
   margin: 5px;
   padding: 5px;
@@ -36,6 +81,8 @@
 /* Main section  */
 .mainGrid {
   display: grid;
+  grid-gap: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(188px));
 }
 
 .card-body {
