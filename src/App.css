@@ -22,7 +22,7 @@
 .navbar-vertical ul {
   list-style: none;
   margin: 0;
-  padding-left: 20px;
+  padding-left: 7px;
 }
 
 .navbar-vertical li {
@@ -61,7 +61,7 @@
   background-color: rgb(65, 39, 167);
 }
 
-h1 {
+.navbar-vertical h1 {
   font-size: 12px;
   font-weight: 700;
   line-height: 16px;
@@ -90,9 +90,16 @@ h1 {
   overflow: auto;
   vertical-align: baseline;
 }
-/* End of Navbar vertical */
+/* End of Navbar vertical ***************************************************************************/
 
-/* Main section  */
+/* Main section  *******************************************************************/
+/* paddingLeft: '237px', paddingBottom: '86px', color: 'white' */
+.main-section {
+  padding-left: 237px;
+  padding-bottom: 86px;
+  color: white;
+}
+
 .track-container {
   background-color: #181818;
   border-radius: 4px;
@@ -172,3 +179,38 @@ h1 {
 .on-scroll {
   background-image: linear-gradient(to left, rgb(46, 55, 56), rgb(63, 57, 57));
 }
+
+/* ALBUM PAGE -------------------------------------
+___________________________________________ */
+
+.album-page .jumbotron {
+  background: linear-gradient(#407e9c, #202020);
+}
+
+.album-page i {
+  transition: all 0.01s ease-in-out;
+}
+
+.album-page i:hover {
+  transform: scale(1.05);
+}
+
+.album-page button {
+  height: 35px;
+}
+
+.album-page .trackHover:hover {
+  background-color: #2a2a2a;
+  cursor: pointer;
+}
+
+.album-page .trackHover a {
+  text-decoration: none;
+}
+
+.album-page h1 {
+  font-size: default;
+}
+/* ____________________________________________________ */
+/* END OF ALBUM PAGE -------------------------------------
+___________________________________________ */

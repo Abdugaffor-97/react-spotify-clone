@@ -4,12 +4,14 @@ const { Image } = require("react-bootstrap")
 
 const Track = (props) => {
   return (
-    <div className='track-container'>
+    <div
+      className='track-container'
+      onClick={() => props.history.push('/album/' + props.id)}
+    >
       <div className='img-container'>
         <Image
           style={{ borderRadius: '10px', width: '85%' }}
           src={props.img}
-          onClick={() => props.history.push('/album/' + props.id)}
         />
         <div className='btn-container'>
           <button>

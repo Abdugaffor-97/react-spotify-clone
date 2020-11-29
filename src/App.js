@@ -15,7 +15,7 @@ function App() {
         <NavBar />
         <NavbarVertical />
         <Route path="/" exact render={() => <Home />} />
-        <Route path="/album:id" exact component={Album} />
+        <Route path="/album/:id/" exact component={Album} />
       </BrowserRouter>
     </div>
   );

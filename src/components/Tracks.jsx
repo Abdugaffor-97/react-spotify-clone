@@ -49,6 +49,7 @@ class Tracks extends Component {
                   img={track.album.cover_medium}
                   title={track.title_short}
                   artistName={track.artist.name}
+                  id={track.album.id}
                 />
               </Col>
             ))}
