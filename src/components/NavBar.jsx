@@ -1,14 +1,15 @@
+import { Link } from "react-router-dom"
+
 const { Navbar, Nav, Dropdown, DropdownButton, Button } = require("react-bootstrap")
 
 
 const NavBar = () => {
   return (
-    <Navbar fixed="top" collapseOnSelect expand="sm" style={{ left: '235px', backgroundColor: '#fffff' }}>
-
+    <Navbar fixed="top" collapseOnSelect expand="sm" style={{ left: '235px', backgroundColor: 'black' }}>
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link href="#features"><i className="fas fa-less-than"></i></Nav.Link>
-          <Nav.Link href="#pricing"><i className="fas fa-greater-than"></i></Nav.Link>
+          <Nav.Link as={Link} to='/'><i className="fas fa-less-than text-white"></i></Nav.Link>
+          <Nav.Link as={Link} to='/'><i className="fas fa-greater-than text-white"></i></Nav.Link>
         </Nav>
         <Nav>
           <Button variant="outline-secondary">UPGRADE</Button>
