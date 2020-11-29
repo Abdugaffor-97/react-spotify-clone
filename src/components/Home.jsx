@@ -2,7 +2,7 @@ import { Container } from 'react-bootstrap'
 import Tracks from './Tracks'
 
 const Home = () => (
-  <main style={{ paddingLeft: '237px', paddingBottom: '86px', color: 'white' }}>
+  <main className='main-section'>
     <br />
     <br />
     <br />
