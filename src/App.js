@@ -7,15 +7,28 @@ import NavBar from "./components/NavBar";
 import NavbarVertical from "./components/NavBarVertical";
 import Home from "./components/Home";
 import Album from "./components/Ablum";
+import Footer from "./components/Footer";
+const { useState } = require("react");
 
 function App() {
+  const [currentTrack, setCurrentTrack] = useState(null);
+
   return (
     <div className="App">
       <BrowserRouter>
         <NavBar />
         <NavbarVertical />
-        <Route path="/" exact render={() => <Home />} />
-        <Route path="/album/:id/" exact component={Album} />
+        <Route
+          path="/"
+          exact
+          render={() => <Home setCurrentTrack={setCurrentTrack} />}
+        />
+        <Route
+          path="/album/:id/"
+          exact
+          render={() => <Album setCurrentTrack={setCurrentTrack} />}
+        />
+        <Footer currentTrack={currentTrack} />
       </BrowserRouter>
     </div>
   );
