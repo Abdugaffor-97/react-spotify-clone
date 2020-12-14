@@ -1,48 +1,44 @@
-import { Component } from "react"
-import { Link } from "react-router-dom"
+import { Component } from "react";
+import { Link } from "react-router-dom";
+const { AiFillHome, AiOutlineSearch, AiFillHeart } = require("react-icons/ai");
+const { VscLibrary } = require("react-icons/vsc");
+const { FaSpotify } = require("react-icons/fa");
+const { BsPlus } = require("react-icons/bs");
 
-const { Nav } = require("react-bootstrap")
+const { Nav } = require("react-bootstrap");
 
 class NavbarVertival extends Component {
-
   render() {
     return (
-      <Nav className="navbar-vertical h-100 column">
-        <Nav.Link as={Link} to='/'>
-          <i className="fab fa-spotify fa-2x text-white"> <b>Spotify</b></i>
+      <div className="navbar-vertical">
+        <Nav.Link as={Link} to="/">
+          <div id="spotify-icon" className="d-flex ">
+            <FaSpotify />
+            <h3 className="mt-1 ml-1">
+              <b>Spotify</b>
+            </h3>
+          </div>
         </Nav.Link>
         <ul>
-          <li className='current-page'>
-            <Nav.Link as={Link} to='/' eventKey="link-1">
-              <svg viewBox="0 0 512 512" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M448 463.746h-149.333v-149.333h-85.334v149.333h-149.333v-315.428l192-111.746 192 110.984v316.19z"
-                  fill="currentColor"></path>
-              </svg>
-              <h1 className='mx-2'>Home</h1>
+          <li className="current-page">
+            <Nav.Link as={Link} to="/" eventKey="link-1">
+              <AiFillHome />
+              <h1 className="mx-2">Home</h1>
             </Nav.Link>
           </li>
           <li>
-            <Nav.Link as={Link} to='/search' eventKey="link-2">
-              <svg viewBox="0 0 512 512" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M349.714 347.937l93.714 109.969-16.254 13.969-93.969-109.969q-48.508 36.825-109.207 36.825-36.826 0-70.476-14.349t-57.905-38.603-38.603-57.905-14.349-70.476 14.349-70.476 38.603-57.905 57.905-38.603 70.476-14.349 70.476 14.349 57.905 38.603 38.603 57.905 14.349 70.476q0 37.841-14.73 71.619t-40.889 58.921zM224 377.397q43.428 0 80.254-21.461t58.286-58.286 21.461-80.254-21.461-80.254-58.286-58.285-80.254-21.46-80.254 21.46-58.285 58.285-21.46 80.254 21.46 80.254 58.285 58.286 80.254 21.461z"
-                  fill="currentColor" fillRule="evenodd"></path>
-              </svg>
-              <h1 className='mx-2'>Search</h1>
+            <Nav.Link as={Link} to="/search" eventKey="link-2">
+              <AiOutlineSearch />
+              <h1 className="mx-2">Search</h1>
             </Nav.Link>
           </li>
           <li>
             <Nav.Link>
-              <svg viewBox="0 0 512 512" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M291.301 81.778l166.349 373.587-19.301 8.635-166.349-373.587zM64 463.746v-384h21.334v384h-21.334zM192 463.746v-384h21.334v384h-21.334z"
-                  fill="currentColor"></path>
-              </svg>
-              <h1 className='mx-2'>Your library</h1>
+              <VscLibrary />
+              <h1 className="mx-2">Your library</h1>
             </Nav.Link>
           </li>
         </ul>
-
 
         <ul>
           <li>
@@ -50,34 +46,30 @@ class NavbarVertival extends Component {
           </li>
           <li>
             <Nav.Link>
-              <i className="fas fa-plus"></i>
+              <BsPlus />
               <h1>Create Playlist</h1>
             </Nav.Link>
           </li>
           <li>
             <Nav.Link>
-              <i className="fas fa-heart"></i>
+              <AiFillHeart />
               <h1>Linked Songs</h1>
             </Nav.Link>
-            <div className='border-bottom border-secondary'></div>
+            <div className="border-bottom border-secondary"></div>
           </li>
         </ul>
 
-
-
-
-        <div className='border-bottom border-secondary'></div>
-        <div className='playlist'>
+        <div className="border-bottom border-secondary"></div>
+        <div className="playlist">
           <p>Lorem ipsum dolor sit.</p>
           <p>Lorem ipsum dolor sit.</p>
           <p>Lorem ipsum dolor sit.</p>
           <p>Lorem ipsum dolor sit.</p>
           <p>Lorem ipsum dolor sit.</p>
         </div>
-      </Nav>
-
-    )
+      </div>
+    );
   }
 }
 
-export default NavbarVertival
+export default NavbarVertival;
