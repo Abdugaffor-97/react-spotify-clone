@@ -5,68 +5,70 @@ const { VscLibrary } = require("react-icons/vsc");
 const { FaSpotify } = require("react-icons/fa");
 const { BsPlus } = require("react-icons/bs");
 
-const { Nav } = require("react-bootstrap");
-
 class NavbarVertival extends Component {
   render() {
     return (
       <div className="navbar-vertical">
-        <Nav.Link as={Link} to="/">
-          <div id="spotify-icon" className="d-flex ">
-            <FaSpotify />
-            <h3 className="mt-1 ml-1">
-              <b>Spotify</b>
-            </h3>
-          </div>
-        </Nav.Link>
-        <ul>
-          <li className="current-page">
-            <Nav.Link as={Link} to="/" eventKey="link-1">
+        <section>
+          <Link to="/">
+            <div id="spotify-icon" className="d-flex ">
+              <FaSpotify />
+              <h3 className="mt-1 ml-1">
+                <b>Spotify</b>
+              </h3>
+            </div>
+          </Link>
+        </section>
+
+        <section>
+          <div className="current-page">
+            <Link to="/">
               <AiFillHome />
               <h1 className="mx-2">Home</h1>
-            </Nav.Link>
-          </li>
-          <li>
-            <Nav.Link as={Link} to="/search" eventKey="link-2">
+            </Link>
+          </div>
+
+          <div>
+            <Link to="/search">
               <AiOutlineSearch />
               <h1 className="mx-2">Search</h1>
-            </Nav.Link>
-          </li>
-          <li>
-            <Nav.Link>
+            </Link>
+          </div>
+
+          <div>
+            <Link to="/library">
               <VscLibrary />
               <h1 className="mx-2">Your library</h1>
-            </Nav.Link>
-          </li>
-        </ul>
+            </Link>
+          </div>
+        </section>
 
-        <ul>
-          <li>
-            <h1>PLAYLISTS</h1>
-          </li>
-          <li>
-            <Nav.Link>
+        <section>
+          <h1>PLAYLISTS</h1>
+
+          <div>
+            <Link to="/playlist">
               <BsPlus />
               <h1>Create Playlist</h1>
-            </Nav.Link>
-          </li>
-          <li>
-            <Nav.Link>
+            </Link>
+          </div>
+
+          <div>
+            <Link to="/linked-songs">
               <AiFillHeart />
               <h1>Linked Songs</h1>
-            </Nav.Link>
-            <div className="border-bottom border-secondary"></div>
-          </li>
-        </ul>
+            </Link>
+          </div>
+          <div className="border-bottom border-secondary"></div>
+        </section>
 
-        <div className="border-bottom border-secondary"></div>
-        <div className="playlist">
+        <section className="playlist">
           <p>Lorem ipsum dolor sit.</p>
           <p>Lorem ipsum dolor sit.</p>
           <p>Lorem ipsum dolor sit.</p>
           <p>Lorem ipsum dolor sit.</p>
           <p>Lorem ipsum dolor sit.</p>
-        </div>
+        </section>
       </div>
     );
   }

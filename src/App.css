@@ -7,8 +7,8 @@
 .navbar-vertical {
   position: fixed;
   width: 235px;
+  height: 100%;
   padding-top: 24px;
-  display: flex;
   -webkit-box-direction: normal;
   -webkit-box-orient: vertical;
   -webkit-box-flex: 1;
@@ -19,18 +19,21 @@
   background-color: #000000;
 }
 
+.navbar-vertical a.navlink {
+  padding: 0;
+}
+
 .navbar-vertical ul {
-  list-style: none;
   margin: 0;
   padding-left: 7px;
 }
 
-.navbar-vertical li {
+.navbar-vertical ul li {
   width: 205px;
+  list-style: none;
 }
 
 .navbar-vertical svg,
-.navbar-vertical i.fas,
 .navbar-vertical h1 {
   color: #b2b2b2;
 }
@@ -40,21 +43,12 @@
   color: white;
 }
 
-.navbar-vertical ul li:hover i.fa-plus {
-  background-color: white;
+#spotify-icon svg {
+  color: white;
+  font-size: 40px;
 }
-
-.navbar-vertical ul li:hover i.fa-heart {
-  background-color: rgb(82, 48, 219);
-}
-
-.navbar-vertical i.fas {
-  padding: 6px;
-}
-
-.navbar-vertical .fas.fa-plus {
-  color: #414141;
-  background-color: #b2b2b2;
+#spotify-icon b {
+  color: #ffffff;
 }
 
 .navbar-vertical .fas.fa-heart {
@@ -78,6 +72,10 @@
 .current-page svg,
 .current-page h1 {
   color: #ffffff;
+}
+
+.navbar-vertical svg {
+  font-size: 22px;
 }
 
 /* backgroundColor: '#040404', width: '234px' */
@@ -106,6 +104,10 @@
   margin: 10px;
   padding-top: 15px;
   cursor: pointer;
+}
+
+.track-container:hover {
+  background-color: #3b3b3b;
 }
 
 .img-container img {
@@ -214,3 +216,45 @@ ___________________________________________ */
 /* ____________________________________________________ */
 /* END OF ALBUM PAGE -------------------------------------
 ___________________________________________ */
+
+/* **************  Footer ********** */
+.progress {
+  height: 5px;
+  background: #535353;
+  width: 100%;
+}
+
+.progress div {
+  color: #b3b3b3;
+}
+
+.progress-bar {
+  background: #c2c2c2;
+}
+
+.progress:hover .progress-bar {
+  background: #1db954;
+}
+
+.progress b {
+  color: red;
+}
+
+footer svg {
+  font-size: 30px;
+  color: #b3b3b3;
+  margin: 0 10px;
+}
+
+footer svg:first-of-type,
+footer svg:last-of-type {
+  font-size: 25px;
+}
+
+footer svg:nth-child(3) {
+  font-size: 40px;
+}
+
+footer svg:hover {
+  color: #ffffff;
+}
