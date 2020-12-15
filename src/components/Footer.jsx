@@ -10,14 +10,12 @@ const { BsFillVolumeUpFill } = require("react-icons/bs");
 const Footer = () => {
   return (
     <footer
-      className="position-fixed w-100 text-center bg-dark"
-      style={{ top: "90vh", height: "80px" }}
+      className="position-fixed w-100 text-center"
+      style={{ top: "92vh", height: "80px" }}
     >
       <Row>
         <Col md={3} className="">
-          <div className="">
-            <Image src={process.env.PUBLIC_URL + "/icon.png"} />
-          </div>
+          <div className="player-left"></div>
         </Col>
         <Col md={6} className="">
           <div>
@@ -27,7 +25,7 @@ const Footer = () => {
             <BiSkipNext />
             <IoRepeat />
           </div>
-          <div>
+          <div className="player-center">
             <div className="d-flex justify-content-between align-items-center">
               <div>
                 <b className="text-white">0:00</b>
@@ -39,7 +37,7 @@ const Footer = () => {
             </div>
           </div>
         </Col>
-        <Col md={3} className="volume-section">
+        <Col md={3} className="player-right">
           <div className="d-flex align-items-center">
             <CgPlayList />
             <MdDevices />

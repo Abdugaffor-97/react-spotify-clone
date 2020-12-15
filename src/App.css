@@ -220,10 +220,24 @@ ___________________________________________ */
 ___________________________________________ */
 
 /* **************  Footer ********** */
-.progress {
+footer {
+  background-color: #282828;
+}
+
+.player-right svg {
+  font-size: 30px;
+}
+
+.player-right .progress {
+  width: 100px;
+}
+.player-center .progress {
+  width: 100%;
+}
+
+.player-center .progress {
   height: 5px;
   background: #535353;
-  width: 100%;
 }
 
 .progress div {
@@ -238,19 +252,15 @@ ___________________________________________ */
   background: #1db954;
 }
 
-.progress b {
-  color: red;
-}
-
 footer svg {
   font-size: 30px;
   color: #b3b3b3;
   margin: 0 10px;
 }
 
-footer svg:first-of-type,
-footer svg:last-of-type {
-  font-size: 25px;
+.player-center svg:first-of-type,
+.player-center svg:last-of-type {
+  font-size: 20px;
 }
 
 footer svg:nth-child(3) {
