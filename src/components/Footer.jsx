@@ -1,4 +1,4 @@
-const { Row, Image, Col, ProgressBar } = require("react-bootstrap");
+const { Row, Col, ProgressBar } = require("react-bootstrap");
 const { IoPlayCircleOutline, IoRepeat } = require("react-icons/io5");
 const { IoIosShuffle } = require("react-icons/io");
 // const { BsShuffle } = require("react-icons/bs");
@@ -31,6 +31,7 @@ const Footer = () => {
                 <b className="text-white">0:00</b>
               </div>
               <ProgressBar now={90} />
+              <audio></audio>
               <div>
                 <b className="text-white">10:30</b>
               </div>

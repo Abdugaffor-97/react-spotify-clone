@@ -1,18 +1,16 @@
-import Track from './Track'
+import Track from "./Track";
 
-
-const { Row, Col, Container } = require("react-bootstrap")
+const { Row, Col, Container } = require("react-bootstrap");
 const { Component } = require("react");
-
 
 class Tracks extends Component {
   state = {
     Tracks: [],
     fetching: true,
-  }
+  };
 
   fetchTracks = async () => {
-    const url = 'https://deezerdevs-deezer.p.rapidapi.com/search?q='
+    const url = "https://deezerdevs-deezer.p.rapidapi.com/search?q=";
     const headers = new Headers({
       "x-rapidapi-key": "8085f2770emshc1cb3109961c5b5p130d8djsn976ae5a2d25d",
       "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
@@ -20,26 +18,26 @@ class Tracks extends Component {
 
     try {
       const response = await fetch(url + this.props.artistName, {
-        method: 'GET',
+        method: "GET",
         headers,
-      })
-      const result = await response.json()
-      const Tracks = result.data
-      console.log(Tracks)
-      this.setState({ Tracks: Tracks, fetching: false })
+      });
+      const result = await response.json();
+      const Tracks = result.data;
+      console.log(Tracks);
+      this.setState({ Tracks: Tracks, fetching: false });
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
+  };
 
   componentDidMount = () => {
-    this.fetchTracks()
-  }
+    this.fetchTracks();
+  };
 
   render() {
     return (
-      <>
-        <h2 className='pl-3 text-white'>{this.props.artistName}</h2>
+      <div style={{ minHeight: "80vh" }}>
+        <h2 className="pl-3 text-white">{this.props.artistName}</h2>
         <Container>
           <Row xs={1} sm={2} md={3} lg={4} xl={5}>
             {this.state.Tracks.map((track, idx) => (
@@ -50,15 +48,15 @@ class Tracks extends Component {
                   title={track.title_short}
                   artistName={track.artist.name}
                   id={track.album.id}
+                  preview={track.preview}
                 />
               </Col>
             ))}
           </Row>
         </Container>
-      </>
-    )
+      </div>
+    );
   }
 }
 
-
-export default Tracks
+export default Tracks;
