@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Link } from "react-router-dom";
+import Link from "./CustomCumponents";
 const { AiFillHome, AiOutlineSearch, AiFillHeart } = require("react-icons/ai");
 const { VscLibrary } = require("react-icons/vsc");
 const { FaSpotify } = require("react-icons/fa");

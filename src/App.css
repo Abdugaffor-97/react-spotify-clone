@@ -21,6 +21,7 @@
 
 .navbar-vertical section {
   margin: 20px 20px 0px;
+  cursor: pointer;
 }
 
 .navbar-vertical a.navlink {
@@ -29,6 +30,7 @@
 
 .navbar-vertical a {
   line-height: 40px;
+  width: 235px;
 }
 
 .navbar-vertical a:hover {
