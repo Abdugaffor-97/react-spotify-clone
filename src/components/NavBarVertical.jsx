@@ -1,5 +1,5 @@
 import { Component } from "react";
-import Link from "./CustomCumponents";
+import Link from "./styled_components/Link";
 const { AiFillHome, AiOutlineSearch, AiFillHeart } = require("react-icons/ai");
 const { VscLibrary } = require("react-icons/vsc");
 const { FaSpotify } = require("react-icons/fa");
