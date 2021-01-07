@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { withRouter } from "react-router-dom";
+const { AiOutlinePlayCircle } = require("react-icons/ai");
 
 const {
   Jumbotron,
@@ -86,13 +87,24 @@ class Album extends Component {
                   key={track.id}
                   className="d-flex justify-content-between rounded pt-3 pb-2 mx-3 trackHover"
                 >
-                  <a
-                    href="#sss"
-                    className="card-title trackHover px-3"
-                    style={{ color: "white" }}
-                  >
-                    {track.title}
-                  </a>
+                  <div>
+                    <AiOutlinePlayCircle
+                      onClick={() => {
+                        const audio = document.querySelector("audio");
+                        audio.src = track.preview;
+                        audio.play();
+                      }}
+                      size={32}
+                      style={{ color: "white", cursor: "default" }}
+                    />
+                    <a
+                      href="#sss"
+                      className="card-title trackHover px-3"
+                      style={{ color: "white" }}
+                    >
+                      {track.title}
+                    </a>
+                  </div>
                   <div>
                     <i className="far fa-heart text-white"></i>
                     <span className=" mx-1 duration pr-3 text-white-50">
