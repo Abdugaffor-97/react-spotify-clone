@@ -1,9 +1,10 @@
 import { Component } from "react";
+import { Button } from "react-bootstrap";
 import Link from "./styled_components/Link";
 const { AiFillHome, AiOutlineSearch, AiFillHeart } = require("react-icons/ai");
 const { VscLibrary } = require("react-icons/vsc");
 const { FaSpotify } = require("react-icons/fa");
-const { BsPlus } = require("react-icons/bs");
+const { BsPlus, BsArrowDownShort } = require("react-icons/bs");
 
 class NavbarVertival extends Component {
   render() {
@@ -68,6 +69,17 @@ class NavbarVertival extends Component {
           <p>Lorem ipsum dolor sit.</p>
           <p>Lorem ipsum dolor sit.</p>
           <p>Lorem ipsum dolor sit.</p>
+        </section>
+        <section>
+          <Button
+            style={{
+              width: "200px",
+            }}
+          >
+            {" "}
+            <BsArrowDownShort />
+            Install
+          </Button>
         </section>
       </div>
     );

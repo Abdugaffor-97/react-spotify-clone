@@ -15,7 +15,9 @@ const Footer = () => {
     >
       <Row>
         <Col md={3} className="">
-          <div className="player-left"></div>
+          <div className="player-left">
+            <img alt="img" />
+          </div>
         </Col>
         <Col md={6} className="">
           <div>
