@@ -21,17 +21,18 @@ const Login = () => {
           <div className="col-12" style={{ color: "white" }}>
             <strong>To continue, log in to Spotify</strong>
           </div>
-          <ContinueWith
+          {/* <ContinueWith
             title="Continue with Facebook"
             className="btn btn-facebook btn-lg btn-block"
           />
           <ContinueWith
             title="Continue with Apple"
             className="btn btn-apple btn-lg btn-block"
-          />
+          /> */}
           <ContinueWith
             title="Continue with Google"
             className="btn btn-google btn-lg btn-block"
+            loginWith={process.env.REACT_APP_API_URL + "/users/googleLogin"}
           />
         </div>
         <div className="divide" style={{ marginBottom: "30px" }}>
@@ -66,7 +67,7 @@ const Login = () => {
               className="form-check-input"
               id="exampleCheck1"
             />
-            <label className="form-check-label" for="exampleCheck1">
+            <label className="form-check-label" htmlFor="exampleCheck1">
               Remember me
             </label>
             <button
