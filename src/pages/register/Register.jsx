@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./style.scss";
+import ContinueWith from "../../components/button/ContinueWith";
 
 const Register = () => {
   return (
@@ -15,13 +16,10 @@ const Register = () => {
         </div>
         <hr />
       </div>
-      <div className="row d-flex" style={{ textAlign: "center" }}>
-        <div className="col-12 mb-4" style={{ color: "white" }}>
-          <strong style={{ fontWeight: "bold", fontSize: "large" }}>
-            Sign up with your email address
-          </strong>
-        </div>
-      </div>
+      <ContinueWith
+        title="Sign up with your email address"
+        className="btn btn-lg btn-block btn-email"
+      />
       <form>
         <div className="form-group">
           <label htmlFor="EnterEmail">What's your email?</label>
