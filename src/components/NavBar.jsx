@@ -31,7 +31,12 @@ const NavBar = () => {
               <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
               <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
               <Dropdown.Divider />
-              <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+              <Dropdown.Item as={Link} to="/login">
+                Sign In
+              </Dropdown.Item>
+              <Dropdown.Item as={Link} to="/register">
+                Sign Up
+              </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
         </Nav>

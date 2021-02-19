@@ -6,8 +6,8 @@ const Login = () => {
       <div className="container" style={{ maxWidth: "100%" }}>
         <div className="justify-content-center d-flex mt-4">
           <img
-            style={{ maxWidth: "20" }}
-            src="Assets/Spotify_Logo_RGB_White.svg"
+            style={{ maxWidth: "300px" }}
+            src={process.env.PUBLIC_URL + "Assets/Spotify_Logo_RGB_White.svg"}
             alt="Spotify Logo White"
           />
         </div>

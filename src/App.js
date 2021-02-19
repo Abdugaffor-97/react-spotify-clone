@@ -1,11 +1,11 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
+import "./App.scss";
 
 import { BrowserRouter, Route } from "react-router-dom";
 
 import NavBar from "./components/NavBar";
 import NavbarVertical from "./components/NavBarVertical";
-import Home from "./components/Home";
+import Home from "./pages/home";
 import Album from "./components/Ablum";
 import Footer from "./components/Footer";
 import Register from "./pages/register";

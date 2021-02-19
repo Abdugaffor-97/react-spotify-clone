@@ -1,5 +1,5 @@
 import { Container } from "react-bootstrap";
-import Tracks from "./Tracks";
+import Tracks from "../../components/Tracks";
 
 const Home = () => (
   <main className="main-section">

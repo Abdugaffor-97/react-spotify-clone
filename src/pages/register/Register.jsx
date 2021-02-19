@@ -4,6 +4,16 @@ import "./style.scss";
 const Register = () => {
   return (
     <div className="container" style={{ maxWidth: "550px" }}>
+      <div className="container" style={{ maxWidth: "100%" }}>
+        <div className="justify-content-center d-flex mt-4">
+          <img
+            style={{ maxWidth: "300px" }}
+            src={process.env.PUBLIC_URL + "Assets/Spotify_Logo_RGB_White.svg"}
+            alt="Spotify Logo White"
+          />
+        </div>
+        <hr />
+      </div>
       <div className="row d-flex" style={{ textAlign: "center" }}>
         <div className="col-12 mb-4" style={{ color: "white" }}>
           <strong style={{ fontWeight: "bold", fontSize: "large" }}>
