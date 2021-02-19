@@ -1,4 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import ContinueWith from "../../components/button/ContinueWith";
+import "./style.scss";
 
 const Login = () => {
   return (
@@ -18,24 +21,18 @@ const Login = () => {
           <div className="col-12" style={{ color: "white" }}>
             <strong>To continue, log in to Spotify</strong>
           </div>
-          <div className="col-12 my-1">
-            <a
-              type="button"
-              className="btn btn-facebook btn-lg btn-block"
-              href="https://www.facebook.com/v7.0/dialog/oauth?client_id=174829003346&state=AQAAbXBjN5CxEfrurE%2FRXCjdPCibN2RCnJ7tM%2BTQmSrXFZbSA0T4d0S6u19Q9btEvbqj9eLr7p67AMEKnW9BdYwB1ICGhij1dPnUu7xXqviGLBvk1wNHIKquFE8eIhTRH%2FrAz%2B7ps8Uef7DXXVFcj10rjOb60BByYUkkGProad8w8fV9CCr0asnJ1zLtr9KhdNm8PeU1M9fSTv800z3nnTKpbtJ7SgWr%2BUyah2%2BDGkZs0HYaAkAqhUnpGpWZtCHEYtg%3D&redirect_uri=https%3A%2F%2Faccounts.spotify.com%2Flogin%2Ffacebook%2Fredirect"
-            >
-              <i className="fab fa-facebook"></i>Continue with Facebook
-            </a>
-          </div>
-          <div className="col-12 my-1">
-            <a
-              type="button"
-              className="btn btn-apple btn-lg btn-block"
-              href="https://appleid.apple.com/auth/authorize?client_id=com.spotify.accounts&response_type=code&response_mode=form_post&scope=name%20email&state=AQAAbXBjN5CxEfrurE%2FRXCjdPCibN2RCnJ7tM%2BTQmSrXFZbSA0T4d0S6u19Q9btEvbqj9eLr7p67AMEKnW9BdYwB1ICGhij1dPnUu7xXqviGLBvk1wNHIKquFE8eIhTRH%2FrAz%2B7ps8Uef7DXXVFcj10rjOb60BByYUkkGProad8w8fV9CCr0asnJ1zLtr9KhdNm8PeU1M9fSTv800z3nnTKpbtJ7SgWr%2BUyah2%2BDGkZs0HYaAkAqhUnpGpWZtCHEYtg%3D&redirect_uri=https%3A%2F%2Faccounts.spotify.com%2Flogin%2Fapple%2Fredirect"
-            >
-              <i className="fab fa-apple"> </i>Continue with Apple
-            </a>
-          </div>
+          <ContinueWith
+            title="Continue with Facebook"
+            className="btn btn-facebook btn-lg btn-block"
+          />
+          <ContinueWith
+            title="Continue with Apple"
+            className="btn btn-apple btn-lg btn-block"
+          />
+          <ContinueWith
+            title="Continue with Google"
+            className="btn btn-google btn-lg btn-block"
+          />
         </div>
         <div className="divide" style={{ marginBottom: "30px" }}>
           <strong className="divide-Text">Or</strong>
@@ -91,13 +88,12 @@ const Login = () => {
               <strong>Don't have an Account ?</strong>
             </div>
             <div className="col-12">
-              <a
-                type="button"
+              <Link
+                to="/register"
                 className="btn btn-outline-light btn-lg btn-block"
-                href="#sss"
               >
                 SIGN UP FOR SPOTIFY
-              </a>
+              </Link>
             </div>
           </div>
         </div>

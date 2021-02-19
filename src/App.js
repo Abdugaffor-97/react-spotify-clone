@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.scss";
 
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import NavBar from "./components/NavBar";
 import NavbarVertical from "./components/NavBarVertical";
@@ -21,6 +21,8 @@ function App() {
       <BrowserRouter>
         <NavBar />
         <NavbarVertical />
+
+        {/* <Switch> */}
         <Route
           path="/"
           exact
@@ -32,8 +34,9 @@ function App() {
           render={() => <Album setCurrentTrack={setCurrentTrack} />}
         />
         <Footer currentTrack={currentTrack} />
-        <Route exact path="/register" component={Register} />
-        <Route exact path="/login" component={Login} />
+        <Route path="/register" component={Register} />
+        <Route path="/login" component={Login} />
+        {/* </Switch> */}
       </BrowserRouter>
     </div>
   );

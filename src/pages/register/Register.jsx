@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./style.scss";
 
 const Register = () => {
@@ -133,14 +134,13 @@ const Register = () => {
           </label>
         </div>
         <div>
-          <a
-            type="button"
+          <Link
             className="btn btn-success btn-lg"
             style={{ width: "500px" }}
-            href="/home.html"
+            to="/"
           >
             Sign up
-          </a>
+          </Link>
         </div>
       </form>
     </div>
