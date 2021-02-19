@@ -9,6 +9,8 @@ import Home from "./components/Home";
 import Album from "./components/Ablum";
 import Footer from "./components/Footer";
 import Register from "./pages/register";
+import Login from "./pages/login";
+
 const { useState } = require("react");
 
 function App() {
@@ -30,8 +32,8 @@ function App() {
           render={() => <Album setCurrentTrack={setCurrentTrack} />}
         />
         <Footer currentTrack={currentTrack} />
-
         <Route exact path="/register" component={Register} />
+        <Route exact path="/login" component={Login} />
       </BrowserRouter>
     </div>
   );
