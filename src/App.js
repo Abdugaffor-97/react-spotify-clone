@@ -6,7 +6,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import NavbarVertical from "./components/NavBarVertical";
 import Home from "./pages/home";
-import Album from "./components/Ablum";
+import Album from "./pages/album";
 import Footer from "./components/Footer";
 import Register from "./pages/register";
 import Login from "./pages/login";
