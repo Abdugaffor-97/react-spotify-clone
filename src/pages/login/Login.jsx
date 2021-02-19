@@ -58,7 +58,7 @@ const Login = () => {
         <div className="divide" style={{ marginBottom: "30px" }}>
           <strong className="divide-Text">Or</strong>
         </div>
-        <form>
+        <form onSubmit={submitUser}>
           <div className="form-group">
             <input
               type="text"
