@@ -1,9 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./style.scss";
 import ContinueWith from "../../components/button/ContinueWith";
 
 const Register = () => {
+  const [email, setEmail] = useState("");
+  const [password1, setPassword1] = useState("");
+  const [password2, setPassword2] = useState("");
+  const [name, setName] = useState("");
+
+  const submitUser = async (e) => {
+    e.preventDefault();
+
+    const url = process.env.REACT_APP_API_URL;
+
+    const res = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email, password1, name }),
+    });
+
+    localStorage.setItem("accessToken", res.data.accessToken);
+    console.log(res);
+  };
+
   return (
     <div className="container" style={{ maxWidth: "550px" }}>
       <div className="container" style={{ maxWidth: "100%" }}>
@@ -20,7 +42,7 @@ const Register = () => {
         title="Sign up with your email address"
         className="btn btn-lg btn-block btn-email"
       />
-      <form>
+      <form onSubmit={submitUser}>
         <div className="form-group">
           <label htmlFor="EnterEmail">What's your email?</label>
           <input
@@ -30,17 +52,8 @@ const Register = () => {
             placeholder="Enter your email."
             aria-describedby="emailHelp"
             name="Email1"
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="ConfirmEmail">Confirm your email</label>
-          <input
-            type="email"
-            className="form-control"
-            id="ConfirmEmail"
-            placeholder="Enter your email again."
-            aria-describedby="emailHelp"
-            name="Email2"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </div>
         <div className="form-group">
@@ -51,6 +64,8 @@ const Register = () => {
             placeholder="Create a password."
             id="EnterPassword"
             name="password1"
+            value={password1}
+            onChange={(e) => setPassword1(e.target.value)}
           />
         </div>
         <div className="form-group">
@@ -61,6 +76,8 @@ const Register = () => {
             placeholder="Confirm your password."
             id="ConfirmPassword"
             name="password2"
+            value={password2}
+            onChange={(e) => setPassword2(e.target.value)}
           />
         </div>
         <div className="form-group">
@@ -72,6 +89,8 @@ const Register = () => {
             placeholder="Enter a profile name."
             aria-describedby="emailHelp"
             name="userid"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
           />
           <p style={{ fontSize: "small" }}>This appears on your profile.</p>
         </div>
