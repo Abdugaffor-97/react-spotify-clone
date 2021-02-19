@@ -8,6 +8,7 @@ import NavbarVertical from "./components/NavBarVertical";
 import Home from "./components/Home";
 import Album from "./components/Ablum";
 import Footer from "./components/Footer";
+import Register from "./pages/register";
 const { useState } = require("react");
 
 function App() {
@@ -29,6 +30,8 @@ function App() {
           render={() => <Album setCurrentTrack={setCurrentTrack} />}
         />
         <Footer currentTrack={currentTrack} />
+
+        <Route exact path="/register" component={Register} />
       </BrowserRouter>
     </div>
   );
