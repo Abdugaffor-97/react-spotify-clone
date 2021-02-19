@@ -1,9 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import ContinueWith from "../../components/button/ContinueWith";
 import "./style.scss";
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const submitUser = async (e) => {
+    e.preventDefault();
+
+    const url = process.env.REACT_APP_API_URL;
+
+    const res = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email, password }),
+    });
+
+    localStorage.setItem("accessToken", res.data.accessToken);
+    console.log(res);
+  };
+
   return (
     <div>
       <div className="container" style={{ maxWidth: "100%" }}>
@@ -47,6 +67,8 @@ const Login = () => {
               placeholder="Email address or username"
               aria-describedby="emailHelp"
               name="userid"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div className="form-group">
@@ -56,6 +78,8 @@ const Login = () => {
               placeholder="Password"
               id="exampleInputPassword1"
               name="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
           <div
