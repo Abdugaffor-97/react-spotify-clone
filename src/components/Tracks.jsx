@@ -1,6 +1,6 @@
 import Track from "./Track";
 
-const { Row, Col, Container } = require("react-bootstrap");
+const { Row, Col } = require("react-bootstrap");
 const { Component } = require("react");
 
 class Tracks extends Component {
@@ -38,8 +38,8 @@ class Tracks extends Component {
     return (
       <div style={{ minHeight: "80vh" }}>
         <h2 className="pl-3 text-white">{this.props.artistName}</h2>
-        <Container>
-          <Row xs={1} sm={2} md={3} lg={4} xl={5}>
+        <div className="mx-3">
+          <Row xs={1} sm={2} md={3} lg={4} xl={6}>
             {this.state.Tracks.map((track, idx) => (
               <Col key={idx}>
                 <Track
@@ -53,7 +53,7 @@ class Tracks extends Component {
               </Col>
             ))}
           </Row>
-        </Container>
+        </div>
       </div>
     );
   }

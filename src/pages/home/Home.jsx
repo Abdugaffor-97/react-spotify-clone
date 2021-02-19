@@ -1,16 +1,17 @@
-import { Container } from "react-bootstrap";
 import Tracks from "../../components/Tracks";
 
-const Home = () => (
-  <main className="main-section">
-    <br />
-    <br />
-    <br />
-    <Container>
-      <Tracks artistName={"Michael Jackson"} />
-      <Tracks artistName={"50cent"} />
-    </Container>
-  </main>
-);
+const Home = () => {
+  const params = new URLSearchParams(window.location);
+  console.log("params", params.get("ko"));
+  return (
+    <main className="main-section">
+      <br />
+      <br />
+      <br />
+      <Tracks artistName="Michael Jackson" />
+      <Tracks artistName="50cent" />
+    </main>
+  );
+};
 
 export default Home;
