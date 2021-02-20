@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.scss";
 
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { Route, withRouter } from "react-router-dom";
 
 import NavBar from "./components/NavBar";
 import NavbarVertical from "./components/NavBarVertical";
@@ -11,23 +11,24 @@ import Footer from "./components/Footer";
 import Register from "./pages/register";
 import Login from "./pages/login";
 
-function App() {
+function App({ location }) {
   return (
     <div className="App">
-      <BrowserRouter>
-          <NavBar/>
-          <NavbarVertical/>
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/album/:id/" exact component={Album} />
-          {/* <Route component={Footer} /> */}
+      <Route path="/register" exact component={Register} />
+      <Route path="/login" exact component={Login} />
 
-          <Route path="/register" exact component={Register} />
-          <Route path="/login" exact component={Login} />
-        </Switch>
-      </BrowserRouter>
+      {location.pathname !== "/login" && location.pathname !== "/register" && (
+        <>
+          <NavbarVertical />
+          <NavBar />
+          <Footer />
+        </>
+      )}
+
+      <Route path="/" exact component={Home} />
+      <Route path="/album/:id/" exact component={Album} />
     </div>
   );
 }
 
-export default App;
+export default withRouter(App);
