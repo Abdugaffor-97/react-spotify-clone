@@ -15,14 +15,14 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <NavBar />
-        <NavbarVertical />
-          <Route path="/" exact render={() => <Home />} />
-          <Route path="/album/:id/" exact render={() => <Album />} />
-          <Route component={Footer} />
+          <NavBar/>
+          <NavbarVertical/>
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/album/:id/" exact component={Album} />
+          {/* <Route component={Footer} /> */}
 
           <Route path="/register" exact component={Register} />
-        <Switch>
           <Route path="/login" exact component={Login} />
         </Switch>
       </BrowserRouter>
