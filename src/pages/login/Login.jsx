@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import ContinueWith from "../../components/button/ContinueWith";
 import "./style.scss";
+import SpotifyImg from "../../components/styled_components/SpotifyImg";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -25,17 +26,9 @@ const Login = () => {
   };
 
   return (
-    <div id='login'>
-      <div className="container">
-        {/* <div className="justify-content-center d-flex mt-4"> */}
-          <img
-            style={{ maxWidth: "300px" }}
-            src={process.env.PUBLIC_URL + "Assets/Spotify_Logo_RGB_White.svg"}
-            alt="Spotify Logo White"
-          />
-        {/* </div> */}
-        <hr />
-      </div>
+    <div id="login" className="pt-5">
+      <SpotifyImg />
+      <hr />
       <div className="container" style={{ maxWidth: "550px" }}>
         <div className="row d-flex" style={{ textAlign: "center" }}>
           <div className="col-12" style={{ color: "white" }}>
