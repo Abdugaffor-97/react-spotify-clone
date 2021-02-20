@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./style.scss";
-import ContinueWith from "../../components/button/ContinueWith";
+import ContinueWith from "../../components/styled_components/ContinueWith";
 import { Container } from "react-bootstrap";
 import SpotifyImg from "../../components/styled_components/SpotifyImg";
 
