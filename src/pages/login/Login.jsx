@@ -26,7 +26,7 @@ const Login = () => {
 
   return (
     <div>
-      <div className="container" style={{ maxWidth: "100%" }}>
+      <div className="container">
         <div className="justify-content-center d-flex mt-4">
           <img
             style={{ maxWidth: "300px" }}
@@ -41,14 +41,14 @@ const Login = () => {
           <div className="col-12" style={{ color: "white" }}>
             <strong>To continue, log in to Spotify</strong>
           </div>
-          {/* <ContinueWith
+          <ContinueWith
             title="Continue with Facebook"
             className="btn btn-facebook btn-lg btn-block"
           />
           <ContinueWith
             title="Continue with Apple"
             className="btn btn-apple btn-lg btn-block"
-          /> */}
+          />
           <ContinueWith
             title="Continue with Google"
             className="btn btn-google btn-lg btn-block"
@@ -66,7 +66,6 @@ const Login = () => {
               className="form-control"
               id="exampleInputEmail1"
               placeholder="Email address or username"
-              aria-describedby="emailHelp"
               name="userid"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
