@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./style.scss";
 import ContinueWith from "../../components/button/ContinueWith";
+import { Container } from "react-bootstrap";
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -27,17 +28,15 @@ const Register = () => {
   };
 
   return (
-    <div className="container" style={{ maxWidth: "550px" }}>
-      <div className="container" style={{ maxWidth: "100%" }}>
-        <div className="justify-content-center d-flex mt-4">
+    <Container style={{ maxWidth: "550px" }}>
+      {/* <div className="container" style={{ maxWidth: "100%" }}> */}
           <img
             style={{ maxWidth: "300px" }}
             src={process.env.PUBLIC_URL + "Assets/Spotify_Logo_RGB_White.svg"}
             alt="Spotify Logo White"
           />
-        </div>
         <hr />
-      </div>
+      {/* </div> */}
       <ContinueWith
         title="Sign up with your email address"
         className="btn btn-lg btn-block btn-email"
@@ -160,7 +159,7 @@ const Register = () => {
           </Link>
         </div>
       </form>
-    </div>
+    </Container>
   );
 };
 

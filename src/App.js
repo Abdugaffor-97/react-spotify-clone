@@ -17,13 +17,13 @@ function App() {
       <BrowserRouter>
         <NavBar />
         <NavbarVertical />
-        <Switch>
           <Route path="/" exact render={() => <Home />} />
           <Route path="/album/:id/" exact render={() => <Album />} />
           <Route component={Footer} />
 
-          <Route path="/register" component={Register} />
-          <Route path="/login" component={Login} />
+          <Route path="/register" exact component={Register} />
+        <Switch>
+          <Route path="/login" exact component={Login} />
         </Switch>
       </BrowserRouter>
     </div>

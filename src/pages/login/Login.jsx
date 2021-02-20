@@ -25,15 +25,15 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div id='login'>
       <div className="container">
-        <div className="justify-content-center d-flex mt-4">
+        {/* <div className="justify-content-center d-flex mt-4"> */}
           <img
             style={{ maxWidth: "300px" }}
             src={process.env.PUBLIC_URL + "Assets/Spotify_Logo_RGB_White.svg"}
             alt="Spotify Logo White"
           />
-        </div>
+        {/* </div> */}
         <hr />
       </div>
       <div className="container" style={{ maxWidth: "550px" }}>

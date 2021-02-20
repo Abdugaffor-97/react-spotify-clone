@@ -11,7 +11,7 @@ const Footer = () => {
   return (
     <footer
       className="position-fixed w-100 text-center"
-      style={{ top: "92vh", height: "80px" }}
+      style={{ top: "92vh", height: "80px", zIndex: 10 }}
     >
       <Row>
         <Col md={3} className="">
