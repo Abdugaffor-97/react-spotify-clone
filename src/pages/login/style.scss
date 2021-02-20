@@ -1,0 +1,86 @@
+#login {
+  background: linear-gradient(to left top, black, rgb(41, 40, 40)) fixed;
+  color: white;
+  font-family: circular-spotify-ui, Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+
+.divide {
+  border-top: 1px solid #d9dadc;
+  display: block;
+  line-height: 1px;
+  margin: 15px 0;
+  position: relative;
+  text-align: center;
+}
+
+.divide .divide-Text {
+  background: black;
+  font-size: 12px;
+  letter-spacing: 1px;
+  padding: 0 20px;
+  text-transform: uppercase;
+  color: white;
+}
+
+a {
+  color: rgb(3, 110, 3);
+}
+
+a:hover {
+  color: rgb(82, 136, 0);
+}
+
+.btn {
+  border-radius: 20px;
+  letter-spacing: 2px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.btn-facebook {
+  background-color: #3b5998;
+  color: white;
+  text-transform: uppercase;
+}
+
+.btn-facebook:hover {
+  background-color: #5a698a;
+  color: white;
+}
+
+.btn-apple {
+  background-color: black;
+  color: white;
+  border-color: white;
+  text-transform: uppercase;
+}
+
+.btn-google {
+  background-color: white;
+  color: black;
+  border-color: white;
+  text-transform: uppercase;
+}
+
+.btn-apple:hover {
+  background-color: white;
+}
+
+.btn-google:hover {
+  background-color: black;
+  color: white;
+}
+
+.btn-group-lg > .btn,
+.btn-lg {
+  padding: 0.75rem;
+}
+
+.fa-apple {
+  margin-right: 5px;
+}
+
+.fa-facebook {
+  margin-right: 5px;
+}

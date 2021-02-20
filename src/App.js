@@ -1,37 +1,34 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
+import "./App.scss";
 
-import { BrowserRouter, Route } from "react-router-dom";
+import { Route, withRouter } from "react-router-dom";
 
 import NavBar from "./components/NavBar";
 import NavbarVertical from "./components/NavBarVertical";
-import Home from "./components/Home";
-import Album from "./components/Ablum";
+import Home from "./pages/home";
+import Album from "./pages/album";
 import Footer from "./components/Footer";
-const { useState } = require("react");
+import Register from "./pages/register";
+import Login from "./pages/login";
 
-function App() {
-  const [currentTrack, setCurrentTrack] = useState(null);
-
+function App({ location }) {
   return (
     <div className="App">
-      <BrowserRouter>
-        <NavBar />
-        <NavbarVertical />
-        <Route
-          path="/"
-          exact
-          render={() => <Home setCurrentTrack={setCurrentTrack} />}
-        />
-        <Route
-          path="/album/:id/"
-          exact
-          render={() => <Album setCurrentTrack={setCurrentTrack} />}
-        />
-        <Footer currentTrack={currentTrack} />
-      </BrowserRouter>
+      <Route path="/register" exact component={Register} />
+      <Route path="/login" exact component={Login} />
+
+      {location.pathname !== "/login" && location.pathname !== "/register" && (
+        <>
+          <NavbarVertical />
+          <NavBar />
+          <Footer />
+        </>
+      )}
+
+      <Route path="/" exact component={Home} />
+      <Route path="/album/:id/" exact component={Album} />
     </div>
   );
 }
 
-export default App;
+export default withRouter(App);

@@ -16,3 +16,11 @@ Features: - Homepage, Album page, Artist page - When clicking on a song, the nam
     - Use the store for keeping track of the song that is currently playing.
     - Use redux-thunk to wrap your async calls in reusable actions
     - For the undo: npm i redux-undo
+
+### Features
+
+- Create a basic Backend that will handle all the requests to RapidAPI
+- Include Token Based Authentication and Authorization
+- Include login with Spotify
+- [EXTRA] Refresh token technique
+- [EXTRA] Include login with Facebook
