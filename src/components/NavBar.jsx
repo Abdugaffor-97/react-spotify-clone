@@ -9,7 +9,10 @@ const NavBar = () => {
       fixed="top"
       collapseOnSelect
       expand="sm"
-      style={{ left: "235px", backgroundColor: "black" }}
+      style={{
+        left: "235px",
+        backgroundColor: "black",
+      }}
     >
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
