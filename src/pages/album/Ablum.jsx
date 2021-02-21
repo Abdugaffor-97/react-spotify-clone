@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 // import { Component } from "react";
 import { withRouter } from "react-router-dom";
 // import { AiOutlinePlayCircle } from "react-icons/ai";
@@ -7,7 +7,7 @@ import { withRouter } from "react-router-dom";
 import { fetchAlbum } from "../../actions/currentAlbumActions";
 
 const Album = () => {
-  const { album, loading, error } = useSelector((state) => state.currentAlbum);
+  // const { album, loading, error } = useSelector((state) => state.currentAlbum);
   const dispatch = useDispatch();
 
   useEffect(() => {

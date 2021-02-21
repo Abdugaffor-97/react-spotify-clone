@@ -9,3 +9,7 @@ export const current_album_action_types = {
   GET_ALBUM_SUCCESS: "GET_ALBUM_SUCCESS",
   GET_ALBUM_FAILURE: "GET_ALBUM_FAILURE",
 };
+
+export const user_action_types = {
+  SET_USER: "SET_USER",
+};

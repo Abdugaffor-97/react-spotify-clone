@@ -5,6 +5,7 @@ import ContinueWith from "../../components/styled_components/ContinueWith";
 import { Container } from "react-bootstrap";
 import SpotifyImg from "../../components/styled_components/SpotifyImg";
 import { useHistory } from "react-router-dom";
+import { CustomAlert } from "../../components/styled_components";
 
 const Register = () => {
   const history = useHistory();
@@ -170,6 +171,7 @@ const Register = () => {
             )}
           </div>
         </form>
+        {error && <CustomAlert messsage={error} />}
         <p className="mt-3">
           Have an account? <Link to="/login">Log in.</Link>
         </p>

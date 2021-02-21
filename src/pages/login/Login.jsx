@@ -4,9 +4,12 @@ import ContinueWith from "../../components/styled_components/ContinueWith";
 import "./style.scss";
 import SpotifyImg from "../../components/styled_components/SpotifyImg";
 import { CustomAlert, CustomSpinner } from "../../components/styled_components";
+import { setUserInfos } from "../../actions/userActions";
+import { useDispatch } from "react-redux";
 
 const Login = () => {
   const history = useHistory();
+  const dispatch = useDispatch();
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -32,10 +35,14 @@ const Login = () => {
         setLoading(false);
         const user = await res.json();
 
+        dispatch(setUserInfos(user));
+
         history.push("/");
       }
-    } catch (error) {
-      setError(error);
+    } catch (err) {
+      console.log(err.message);
+      setLoading(false);
+      setError(err.message);
     }
   };
 
@@ -112,7 +119,7 @@ const Login = () => {
               </button>
             )}
           </div>
-          {error && <CustomAlert error={error.message} />}
+          {error && error.message && <CustomAlert error={error} />}
         </form>
         <div style={{ textAlign: "center" }}>
           <a href="#ssss">Forgot your Password ?</a>
