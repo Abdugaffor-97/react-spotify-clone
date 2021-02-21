@@ -1,9 +1,9 @@
 import { combineReducers } from "redux";
-import currentSong from "./currentSongReducers";
+import currentAlbum from "./currentAlbumReducers";
 import songsPreview from "./songsPreviewReducers";
 
 const rootReducer = combineReducers({
-  currentSong,
+  currentAlbum,
   songsPreview,
 });
 

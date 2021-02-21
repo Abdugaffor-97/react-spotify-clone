@@ -21,8 +21,8 @@ export function fetchSongs(artist_name) {
     try {
       const url = `https://deezerdevs-deezer.p.rapidapi.com/search?q=${artist_name}`;
       const headers = new Headers({
-        "x-rapidapi-key": "8085f2770emshc1cb3109961c5b5p130d8djsn976ae5a2d25d",
-        "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+        "x-rapidapi-key": process.env.RAPID_API_KEY_VAL,
+        "x-rapidapi-host": process.env.RAPID_API_HOST,
       });
       const response = await fetch(url, {
         method: "GET",
@@ -33,7 +33,6 @@ export function fetchSongs(artist_name) {
 
       dispatch(getSongsSuccess(songs));
     } catch (error) {
-      console.log(error);
       dispatch(getSongsFailure(error));
     }
   };

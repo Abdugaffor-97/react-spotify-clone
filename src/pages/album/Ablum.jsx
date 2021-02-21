@@ -1,51 +1,23 @@
-import React from "react";
-import { Component } from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+// import { Component } from "react";
 import { withRouter } from "react-router-dom";
-import { AiOutlinePlayCircle } from "react-icons/ai";
+// import { AiOutlinePlayCircle } from "react-icons/ai";
+// import { Jumbotron, Button, Container, Image, Spinner } from "react-bootstrap";
+import { fetchAlbum } from "../../actions/currentAlbumActions";
 
-const {
-  Jumbotron,
-  Button,
-  Container,
-  Image,
-  Spinner,
-} = require("react-bootstrap");
+const Album = () => {
+  const { album, loading, error } = useSelector((state) => state.currentAlbum);
+  const dispatch = useDispatch();
 
-class Album extends Component {
-  state = {
-    albumInfo: null,
-    fetching: true,
-  };
+  useEffect(() => {
+    dispatch(fetchAlbum("103248"));
+  }, [dispatch]);
 
-  fetchAlbum = async () => {
-    const url = "https://deezerdevs-deezer.p.rapidapi.com/album/";
-    const headers = new Headers({
-      "x-rapidapi-key": "8085f2770emshc1cb3109961c5b5p130d8djsn976ae5a2d25d",
-      "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
-    });
-
-    try {
-      const response = await fetch(url + this.props.match.params.id, {
-        method: "GET",
-        headers,
-      });
-      const result = await response.json();
-      const albumInfo = result;
-      this.setState({ albumInfo: albumInfo, fetching: false });
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  componentDidMount = () => {
-    this.fetchAlbum();
-  };
-
-  render() {
-    return (
-      <div className="album-page main-section" style={{ minHeight: "100vh" }}>
-        <Jumbotron>
-          {this.state.albumInfo ? (
+  return (
+    <div className="album-page main-section" style={{ minHeight: "100vh" }}>
+      {/* <Jumbotron>
+          {album ? (
             <>
               <Container>
                 <div className="d-flex align-items-end">
@@ -54,13 +26,13 @@ class Album extends Component {
                       className="rounded"
                       style={{ width: "200px" }}
                       alt="img"
-                      src={this.state.albumInfo.cover_big}
+                      src={album.cover_big}
                     />
                   </div>
                   <div className="m-4">
-                    <small className="ml-2"> {this.state.albumInfo.type}</small>
-                    <h1>{this.state.albumInfo.title}</h1>
-                    <h5>{this.state.albumInfo.label}</h5>
+                    <small className="ml-2"> {album.type}</small>
+                    <h1>{album.title}</h1>
+                    <h5>{album.label}</h5>
                   </div>
                 </div>
               </Container>
@@ -81,9 +53,9 @@ class Album extends Component {
           )}
         </Jumbotron>
         <div>
-          {this.state.albumInfo ? (
+          {album ? (
             <>
-              {this.state.albumInfo.tracks.data.map((track) => (
+              {album.tracks.data.map((track) => (
                 <div
                   key={track.id}
                   className="d-flex justify-content-between rounded pt-3 pb-2 mx-3 trackHover"
@@ -120,9 +92,9 @@ class Album extends Component {
           ) : (
             <Spinner animation="grow" />
           )}
-        </div>
-      </div>
-    );
-  }
-}
+        </div> */}
+    </div>
+  );
+};
+
 export default withRouter(Album);
