@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
-import currentSong from "./currentSong";
-import songsPreview from "./songsPreview";
+import currentSong from "./currentSongReducers";
+import songsPreview from "./songsPreviewReducers";
 
 const rootReducer = combineReducers({
   currentSong,
