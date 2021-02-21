@@ -1,7 +1,7 @@
 import Track from "./Track";
-
-const { Row, Col } = require("react-bootstrap");
-const { Component } = require("react");
+import React from "react";
+import { Row, Col } from "react-bootstrap";
+import { Component } from "react";
 
 class Tracks extends Component {
   state = {

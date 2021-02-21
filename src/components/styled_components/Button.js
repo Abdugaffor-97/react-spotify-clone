@@ -1,5 +1,6 @@
+import React from "react";
 import styled from "styled-components";
-const { Dropdown, Button } = require("react-bootstrap");
+import { Dropdown, Button } from "react-bootstrap";
 
 const StyToggle = styled(Dropdown.Toggle)`
   border-radius: 18px;

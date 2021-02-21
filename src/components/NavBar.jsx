@@ -1,7 +1,7 @@
+import React from "react";
 import { Link } from "react-router-dom";
-
-const { DropdownToggle, NavBtn } = require("./styled_components/Button");
-const { Navbar, Nav, Dropdown } = require("react-bootstrap");
+import { DropdownToggle, NavBtn } from "./styled_components/Button";
+import { Navbar, Nav, Dropdown } from "react-bootstrap";
 
 const NavBar = () => {
   return (
