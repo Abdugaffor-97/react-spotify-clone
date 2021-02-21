@@ -1,28 +1,42 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import ContinueWith from "../../components/styled_components/ContinueWith";
 import "./style.scss";
 import SpotifyImg from "../../components/styled_components/SpotifyImg";
+import { CustomAlert, CustomSpinner } from "../../components/styled_components";
 
 const Login = () => {
+  const history = useHistory();
+
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const submitUser = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
-    const url = process.env.REACT_APP_API_URL;
+    try {
+      const url = process.env.REACT_APP_API_URL + "/users/login";
 
-    const res = await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email, password }),
-    });
+      const res = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
 
-    localStorage.setItem("accessToken", res.data.accessToken);
-    console.log(res);
+      if (res.ok) {
+        setLoading(false);
+        const user = await res.json();
+
+        history.push("/");
+      }
+    } catch (error) {
+      setError(error);
+    }
   };
 
   return (
@@ -87,14 +101,18 @@ const Login = () => {
             <label className="form-check-label" htmlFor="exampleCheck1">
               Remember me
             </label>
-            <button
-              type="button"
-              className="btn btn-success btn-lg"
-              style={{ width: "150px" }}
-            >
-              Log In
-            </button>
+            {loading ? (
+              <CustomSpinner />
+            ) : (
+              <button
+                className="btn btn-success btn-lg"
+                style={{ width: "150px" }}
+              >
+                Log In
+              </button>
+            )}
           </div>
+          {error && <CustomAlert error={error.message} />}
         </form>
         <div style={{ textAlign: "center" }}>
           <a href="#ssss">Forgot your Password ?</a>

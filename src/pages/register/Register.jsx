@@ -4,28 +4,42 @@ import "./style.scss";
 import ContinueWith from "../../components/styled_components/ContinueWith";
 import { Container } from "react-bootstrap";
 import SpotifyImg from "../../components/styled_components/SpotifyImg";
+import { useHistory } from "react-router-dom";
 
 const Register = () => {
+  const history = useHistory();
+
   const [email, setEmail] = useState("");
   const [password1, setPassword1] = useState("");
   const [password2, setPassword2] = useState("");
-  const [name, setName] = useState("");
+  const [username, setUsername] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   const submitUser = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    try {
+      const url = process.env.REACT_APP_API_URL + "/users/register";
 
-    const url = process.env.REACT_APP_API_URL;
+      const res = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password: password1, username }),
+      });
 
-    const res = await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email, password1, name }),
-    });
+      if (res.ok) {
+        setLoading(false);
+        history.push("/login");
+      }
 
-    localStorage.setItem("accessToken", res.data.accessToken);
-    console.log(res);
+      console.log(res);
+    } catch (error) {
+      setLoading(false);
+      setError(error);
+    }
   };
 
   return (
@@ -37,6 +51,7 @@ const Register = () => {
           title="Sign up with your email address"
           className="btn btn-lg btn-block btn-email"
         />
+
         <form onSubmit={submitUser}>
           <div className="form-group">
             <label htmlFor="EnterEmail">What's your email?</label>
@@ -46,7 +61,6 @@ const Register = () => {
               id="EnterEmail"
               placeholder="Enter your email."
               aria-describedby="emailHelp"
-              name="Email1"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -58,7 +72,6 @@ const Register = () => {
               className="form-control"
               placeholder="Create a password."
               id="EnterPassword"
-              name="password1"
               value={password1}
               onChange={(e) => setPassword1(e.target.value)}
             />
@@ -70,7 +83,6 @@ const Register = () => {
               className="form-control"
               placeholder="Confirm your password."
               id="ConfirmPassword"
-              name="password2"
               value={password2}
               onChange={(e) => setPassword2(e.target.value)}
             />
@@ -83,9 +95,8 @@ const Register = () => {
               id="ProfileName"
               placeholder="Enter a profile name."
               aria-describedby="emailHelp"
-              name="userid"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
             />
             <p style={{ fontSize: "small" }}>This appears on your profile.</p>
           </div>
@@ -145,14 +156,18 @@ const Register = () => {
               <a href="#aaaa">Privacy Policy</a>.
             </label>
           </div>
+
           <div>
-            <Link
-              className="btn btn-success btn-lg"
-              style={{ width: "500px" }}
-              to="/"
-            >
-              Sign up
-            </Link>
+            {loading ? (
+              <h1>Loading...</h1>
+            ) : (
+              <button
+                className="btn btn-success btn-lg"
+                style={{ width: "500px" }}
+              >
+                Sign up
+              </button>
+            )}
           </div>
         </form>
         <p className="mt-3">

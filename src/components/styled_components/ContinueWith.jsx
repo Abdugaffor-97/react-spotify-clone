@@ -1,7 +1,6 @@
 import React from "react";
 
 export default function SignUpWithFacebook({ title, className, loginWith }) {
-  console.log("loginWith", loginWith);
   return (
     <div className="col-12 my-1">
       <a type="button" className={className} href={loginWith}>

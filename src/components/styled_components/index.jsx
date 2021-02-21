@@ -1,10 +1,10 @@
 import React from "react";
 import { Alert, Spinner } from "react-bootstrap";
 
-export const CustomAlert = (error) => {
+export const CustomAlert = (messsage) => {
   return (
     <div>
-      <Alert variant="danger">{error}</Alert>
+      <Alert variant="danger">{messsage}</Alert>
     </div>
   );
 };
