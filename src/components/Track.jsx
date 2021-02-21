@@ -1,6 +1,6 @@
+import React from "react";
 import { withRouter } from "react-router-dom";
-
-const { Image } = require("react-bootstrap");
+import { Image } from "react-bootstrap";
 
 const Track = (props) => {
   return (

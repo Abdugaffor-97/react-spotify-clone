@@ -1,11 +1,11 @@
-const { Row, Col, ProgressBar } = require("react-bootstrap");
-const { IoPlayCircleOutline, IoRepeat } = require("react-icons/io5");
-const { IoIosShuffle } = require("react-icons/io");
-// const { BsShuffle } = require("react-icons/bs");
-const { BiSkipNext, BiSkipPrevious } = require("react-icons/bi");
-const { CgPlayList } = require("react-icons/cg");
-const { MdDevices } = require("react-icons/md");
-const { BsFillVolumeUpFill } = require("react-icons/bs");
+import React from "react";
+import { Row, Col, ProgressBar } from "react-bootstrap";
+import { IoPlayCircleOutline, IoRepeat } from "react-icons/io5";
+import { IoIosShuffle } from "react-icons/io";
+import { BiSkipNext, BiSkipPrevious } from "react-icons/bi";
+import { CgPlayList } from "react-icons/cg";
+import { MdDevices } from "react-icons/md";
+import { BsFillVolumeUpFill } from "react-icons/bs";
 
 const Footer = () => {
   return (

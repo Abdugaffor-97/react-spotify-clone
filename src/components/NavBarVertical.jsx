@@ -1,10 +1,11 @@
+import React from "react";
 import { Component } from "react";
 import { Button } from "react-bootstrap";
 import Link from "./styled_components/Link";
-const { AiFillHome, AiOutlineSearch, AiFillHeart } = require("react-icons/ai");
-const { VscLibrary } = require("react-icons/vsc");
-const { FaSpotify } = require("react-icons/fa");
-const { BsPlus, BsArrowDownShort } = require("react-icons/bs");
+import { AiFillHome, AiOutlineSearch, AiFillHeart } from "react-icons/ai";
+import { VscLibrary } from "react-icons/vsc";
+import { FaSpotify } from "react-icons/fa";
+import { BsPlus, BsArrowDownShort } from "react-icons/bs";
 
 class NavbarVertival extends Component {
   render() {

@@ -1,6 +1,7 @@
+import React from "react";
 import { Component } from "react";
 import { withRouter } from "react-router-dom";
-const { AiOutlinePlayCircle } = require("react-icons/ai");
+import { AiOutlinePlayCircle } from "react-icons/ai";
 
 const {
   Jumbotron,
