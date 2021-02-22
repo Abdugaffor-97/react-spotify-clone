@@ -12,20 +12,24 @@ import Footer from "./components/Footer";
 import Register from "./pages/register";
 import Login from "./pages/login";
 import Search from "./pages/search";
+import Logout from "./pages/logout";
 
 function App({ location }) {
   return (
     <div className="App">
       <Route path="/register" exact component={Register} />
       <Route path="/login" exact component={Login} />
+      <Route path="/logout" exact component={Logout} />
 
-      {location.pathname !== "/login" && location.pathname !== "/register" && (
-        <>
-          <NavbarVertical />
-          <NavBar />
-          <Footer />
-        </>
-      )}
+      {location.pathname !== "/login" &&
+        location.pathname !== "/register" &&
+        location.pathname !== "/logout" && (
+          <>
+            <NavbarVertical />
+            <NavBar />
+            <Footer />
+          </>
+        )}
 
       <div id="main-pages">
         <Route path="/" exact component={Home} />

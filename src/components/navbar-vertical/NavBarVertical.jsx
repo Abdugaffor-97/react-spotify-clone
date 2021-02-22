@@ -5,7 +5,8 @@ import Link from "../styled_components/Link"; //styled_components/Link
 import { AiFillHome, AiOutlineSearch, AiFillHeart } from "react-icons/ai";
 import { VscLibrary } from "react-icons/vsc";
 import { FaSpotify } from "react-icons/fa";
-import { BsPlus, BsArrowDownShort } from "react-icons/bs";
+import { BsPlus } from "react-icons/bs";
+import { GiPlainArrow } from "react-icons/gi";
 import "./style.scss";
 
 class NavbarVertival extends Component {
@@ -79,7 +80,7 @@ class NavbarVertival extends Component {
             }}
           >
             {" "}
-            <BsArrowDownShort />
+            <GiPlainArrow />
             Install
           </Button>
         </section>

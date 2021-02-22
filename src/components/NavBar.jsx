@@ -2,8 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { DropdownToggle, NavBtn } from "./styled_components/Button";
 import { Navbar, Nav, Dropdown } from "react-bootstrap";
+import { useSelector } from "react-redux";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 const NavBar = () => {
+  const user = useSelector((state) => state.user);
   return (
     <Navbar
       fixed="top"
@@ -17,28 +20,29 @@ const NavBar = () => {
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
           <Nav.Link as={Link} to="/">
-            <i className="fas fa-less-than text-white"></i>
+            <IoIosArrowBack color="white" size={30} />
           </Nav.Link>
           <Nav.Link as={Link} to="/">
-            <i className="fas fa-greater-than text-white"></i>
+            <IoIosArrowForward color="white" size={30} />
           </Nav.Link>
         </Nav>
         <Nav>
           <NavBtn variant="outline-secondary">UPGRADE</NavBtn>
           <Dropdown drop="left">
             <DropdownToggle variant="outline-secondary" id="dropdown-basic">
-              Abdug'affor
+              {user.username}
             </DropdownToggle>
 
             <Dropdown.Menu>
-              <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-              <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-              <Dropdown.Divider />
-              <Dropdown.Item as={Link} to="/login">
-                Sign In
+              <Dropdown.Item as={Link} to="/account">
+                Account
               </Dropdown.Item>
-              <Dropdown.Item as={Link} to="/register">
-                Sign Up
+              <Dropdown.Item as={Link} to="/profile">
+                Profile
+              </Dropdown.Item>
+              <Dropdown.Divider />
+              <Dropdown.Item as={Link} to="/logout">
+                Logout
               </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>

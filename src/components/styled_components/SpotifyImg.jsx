@@ -1,13 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-export default function SpotifyImg() {
+export default function SpotifyImg({ maxWidth = "250px" }) {
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
-      <img
-        style={{ maxWidth: "250px" }}
-        src={process.env.PUBLIC_URL + "Assets/Spotify_Logo_RGB_White.svg"}
-        alt="Spotify Logo White"
-      />
+      <Link to="/">
+        <img
+          style={{ maxWidth: maxWidth }}
+          src={process.env.PUBLIC_URL + "Assets/Spotify_Logo_RGB_White.svg"}
+          alt="Spotify Logo White"
+        />
+      </Link>
     </div>
   );
 }
