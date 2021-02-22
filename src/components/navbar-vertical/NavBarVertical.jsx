@@ -8,20 +8,14 @@ import { FaSpotify } from "react-icons/fa";
 import { BsPlus } from "react-icons/bs";
 import { GiPlainArrow } from "react-icons/gi";
 import "./style.scss";
+import SpotifyLogo from "../styled_components/SpotifyImg";
 
 class NavbarVertival extends Component {
   render() {
     return (
       <div className="navbar-vertical">
         <section>
-          <Link to="/">
-            <div id="spotify-icon" className="d-flex ">
-              <FaSpotify />
-              <h3 className="mt-1 ml-1">
-                <b>Spotify</b>
-              </h3>
-            </div>
-          </Link>
+          <SpotifyLogo maxWidth="140px" />
         </section>
 
         <section>
