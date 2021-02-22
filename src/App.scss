@@ -3,86 +3,6 @@
   background-color: #121212;
 }
 
-/* Navbar vertical */
-.navbar-vertical {
-  position: fixed;
-  width: 235px;
-  height: 100%;
-  padding-top: 15px;
-  -webkit-box-direction: normal;
-  -webkit-box-orient: vertical;
-  -webkit-box-flex: 1;
-  flex: 1;
-  user-select: none;
-  cursor: default;
-  background-color: #000000;
-}
-
-.navbar-vertical section {
-  margin: 20px 20px 0px;
-  cursor: pointer;
-}
-
-.navbar-vertical a.navlink {
-  padding: 0;
-}
-
-.navbar-vertical a {
-  line-height: 40px;
-  width: 235px;
-}
-
-.navbar-vertical a:hover {
-  border-bottom: none;
-}
-
-.navbar-vertical svg,
-.navbar-vertical h1 {
-  color: #b2b2b2;
-}
-
-.navbar-vertical ul li:hover h1,
-.navbar-vertical ul li:hover svg {
-  color: white;
-}
-
-#spotify-icon svg {
-  color: white;
-  font-size: 40px;
-}
-#spotify-icon b {
-  color: #ffffff;
-}
-
-.navbar-vertical .fas.fa-heart {
-  background-color: rgb(65, 39, 167);
-}
-
-.navbar-vertical h1 {
-  font-size: 12px;
-  font-weight: 700;
-  line-height: 16px;
-  letter-spacing: 0.1rem;
-  margin-left: 20px;
-  margin-top: 20px;
-  display: inline;
-}
-
-.current-page {
-  background-color: #282828;
-  border-radius: 5px;
-}
-.current-page svg,
-.current-page h1 {
-  color: #ffffff;
-}
-
-.navbar-vertical svg {
-  font-size: 22px;
-}
-
-/* backgroundColor: '#040404', width: '234px' */
-
 .playlist {
   color: white;
   margin: 5px;
@@ -94,12 +14,10 @@
 /* End of Navbar vertical ***************************************************************************/
 
 /* Main section  *******************************************************************/
-/* paddingLeft: '237px', paddingBottom: '86px', color: 'white' */
-// .main-section {
-//   padding-left: 237px;
-//   padding-bottom: 86px;
-//   color: white;
-// }
+#main-pages {
+  color: white;
+  margin: 60px 10px 10px 250px;
+}
 
 .track-container {
   background-color: #181818;
