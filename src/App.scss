@@ -13,7 +13,6 @@
   -webkit-box-orient: vertical;
   -webkit-box-flex: 1;
   flex: 1;
-  min-height: 0;
   user-select: none;
   cursor: default;
   background-color: #000000;
@@ -96,11 +95,11 @@
 
 /* Main section  *******************************************************************/
 /* paddingLeft: '237px', paddingBottom: '86px', color: 'white' */
-.main-section {
-  padding-left: 237px;
-  padding-bottom: 86px;
-  color: white;
-}
+// .main-section {
+//   padding-left: 237px;
+//   padding-bottom: 86px;
+//   color: white;
+// }
 
 .track-container {
   background-color: #181818;

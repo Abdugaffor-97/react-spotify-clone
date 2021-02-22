@@ -10,8 +10,8 @@ import { BsFillVolumeUpFill } from "react-icons/bs";
 const Footer = () => {
   return (
     <footer
-      className="position-fixed w-100 text-center"
-      style={{ top: "92vh", height: "80px", zIndex: 10 }}
+      className="fixed-bottom w-100 text-center"
+      style={{ height: "80px", zIndex: 10 }}
     >
       <Row>
         <Col md={3} className="">
