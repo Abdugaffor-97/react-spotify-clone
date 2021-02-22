@@ -5,12 +5,13 @@ import "./App.scss";
 import { Route, withRouter } from "react-router-dom";
 
 import NavBar from "./components/NavBar";
-import NavbarVertical from "./components/NavBarVertical";
+import NavbarVertical from "./components/navbar-vertical";
 import Home from "./pages/home";
 import Album from "./pages/album";
 import Footer from "./components/Footer";
 import Register from "./pages/register";
 import Login from "./pages/login";
+import Search from "./pages/search";
 
 function App({ location }) {
   return (
@@ -26,8 +27,11 @@ function App({ location }) {
         </>
       )}
 
-      <Route path="/" exact component={Home} />
-      <Route path="/album/:id/" exact component={Album} />
+      <div id="main-pages">
+        <Route path="/" exact component={Home} />
+        <Route path="/album/:id/" exact component={Album} />
+        <Route path="/search" exact component={Search} />
+      </div>
     </div>
   );
 }
