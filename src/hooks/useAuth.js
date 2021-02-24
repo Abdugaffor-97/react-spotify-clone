@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { setUserInfos } from "../actions/userActions";
@@ -19,15 +19,13 @@ const useAuth = () => {
 
       dispatch(setUserInfos(data));
     } catch (error) {
-      if (
-        e.response.status === 400 ||
-        e.response.status === 401 ||
-        e.response.status === 403
-      ) {
+      if (error) {
         history.push("/logout");
       }
     }
-  }, [fetchUser, user]);
+  }, [user]);
+
+  return [user];
 };
 
 export default useAuth;
