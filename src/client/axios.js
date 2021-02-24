@@ -1,10 +1,10 @@
 import axios from "axios";
 
-const fetchAxios = axios.create({
-    baseURL: process.env.REACT_APP_API_URL,
-    headers: {
-        Authorrzation: `Bearer ${localStorage.getItem('accessToken')}`
-    }
-})
+const fetchBe = axios.create({
+  baseURL: process.env.REACT_APP_API_URL,
+  headers: {
+    Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+  },
+});
 
-export default fetchAxios
+export default fetchBe;

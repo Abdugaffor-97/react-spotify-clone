@@ -17,7 +17,6 @@ export const getSongsFailure = (error) => ({
 export function fetchSongs(artist_name) {
   return async (dispatch) => {
     dispatch(getSongs());
-
     try {
       const url = `https://deezerdevs-deezer.p.rapidapi.com/search?q=${artist_name}`;
       const headers = new Headers({
