@@ -1,31 +1,22 @@
-import { useCallback, useEffect } from "react";
+import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { setUserInfos } from "../actions/userActions";
-import fetchBe from "../client/axios";
+import { fetchUser } from "../actions/userActions";
 
 const useAuth = () => {
   const history = useHistory();
-  const user = useSelector((state) => state.user);
+  const { userInfos, loading, error } = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    fetchUser();
-  });
-
-  const fetchUser = useCallback(async () => {
-    try {
-      const { data } = await fetchBe.get("/users/me");
-
-      dispatch(setUserInfos(data));
-    } catch (error) {
-      if (error) {
-        history.push("/logout");
-      }
+    dispatch(fetchUser());
+    console.log("error", error);
+    if (error && error.message) {
+      history.push("/logout");
     }
-  }, [user]);
+  }, [loading, error]);
 
-  return [user];
+  return [userInfos, loading];
 };
 
 export default useAuth;
