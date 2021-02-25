@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from "react";
+import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { fetchUser } from "../actions/userActions";
@@ -11,33 +11,12 @@ const useAuth = () => {
   useEffect(() => {
     dispatch(fetchUser());
     console.log("error", error);
-    if (error) {
+    if (error && error.message) {
       history.push("/logout");
     }
-  }, []);
-
-  // const authorizeUser = useCallback(() => {
-  //   useCallback(() => {
-
-  //     if (error) {
-  //       history.push("/logout");
-  //     }
-  //   });
-  // }, [userInfos]);
+  }, [loading, error]);
 
   return [userInfos, loading];
 };
 
 export default useAuth;
-
-// const fetchUser = useCallback(async () => {
-//   try {
-//     const { data } = await fetchBe.get("/users/me");
-
-//     dispatch(setUserInfos(data));
-//   } catch (error) {
-//     if (error) {
-//       history.push("/logout");
-//     }
-//   }
-// }, [user]);

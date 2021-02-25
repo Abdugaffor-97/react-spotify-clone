@@ -3,21 +3,25 @@ import { Link, useHistory } from "react-router-dom";
 import ContinueWith from "../../components/styled_components/ContinueWith";
 import "./style.scss";
 import SpotifyImg from "../../components/styled_components/SpotifyImg";
-import { CustomAlert, CustomSpinner } from "../../components/styled_components";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  getUser,
+  getUserFailure,
+  getUserSuccess,
+} from "../../actions/userActions";
+import { Alert, Spinner } from "react-bootstrap";
 
 const Login = () => {
   const history = useHistory();
   const dispatch = useDispatch();
+  const { loading, error } = useSelector((state) => state.user);
 
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const submitUser = async (e) => {
     e.preventDefault();
-    setLoading(true);
+    dispatch(getUser());
 
     try {
       const url = process.env.REACT_APP_API_URL + "/users/login";
@@ -31,15 +35,16 @@ const Login = () => {
       });
 
       if (res.ok) {
-        setLoading(false);
         const user = await res.json();
 
-        history.push("/");
+        if (user && user.username) {
+          dispatch(getUserSuccess(user));
+          history.push("/");
+        }
       }
     } catch (err) {
       console.log(err.message);
-      setLoading(false);
-      setError(err.message);
+      dispatch(getUserFailure(err.message));
     }
   };
 
@@ -106,7 +111,7 @@ const Login = () => {
               Remember me
             </label>
             {loading ? (
-              <CustomSpinner />
+              <Spinner animation="border" />
             ) : (
               <button
                 className="btn btn-success btn-lg"
@@ -116,12 +121,13 @@ const Login = () => {
               </button>
             )}
           </div>
-          {error && error.message && <CustomAlert error={error} />}
         </form>
         <div style={{ textAlign: "center" }}>
           <a href="#ssss">Forgot your Password ?</a>
         </div>
         <hr />
+        {/* {error.length > 0 && <CustomAlert messsage={error[0]} />} */}
+        {error && error.length > 0 && <Alert variant="danger">{error}</Alert>}
         <div>
           <div className="row" style={{ textAlign: "center" }}>
             <div className="col-12 mb-3">

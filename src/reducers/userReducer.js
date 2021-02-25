@@ -15,7 +15,11 @@ export default function userReducer(state = initialState, action) {
       return { ...state, userInfos: action.payload, loading: false };
 
     case C.GET_USER_FAILURE:
-      return { ...state, error: action.payload, loading: false };
+      return {
+        ...state,
+        error: action.payload,
+        loading: false,
+      };
 
     default:
       return state;
