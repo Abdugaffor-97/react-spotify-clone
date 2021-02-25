@@ -1,50 +1,40 @@
 import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import ContinueWith from "../../components/styled_components/ContinueWith";
 import "./style.scss";
 import SpotifyImg from "../../components/styled_components/SpotifyImg";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  getUser,
-  getUserFailure,
-  getUserSuccess,
-} from "../../actions/userActions";
 import { Alert, Spinner } from "react-bootstrap";
+import fetchBe from "../../client/axios";
 
 const Login = () => {
-  const history = useHistory();
-  const dispatch = useDispatch();
-  const { loading, error } = useSelector((state) => state.user);
+  // const history = useHistory();
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [credentials, setCredentials] = useState({ email: "", password: "" });
+
+  const handleChange = (e) =>
+    setCredentials({ ...credentials, [e.target.name]: e.target.value });
 
   const submitUser = async (e) => {
     e.preventDefault();
-    dispatch(getUser());
+    setLoading(true);
 
     try {
-      const url = process.env.REACT_APP_API_URL + "/users/login";
+      const { data } = await fetchBe.post("/users/login", credentials);
+      localStorage.setItem("accessToken", data.accessToken);
+      localStorage.setItem("refreshToken", data.refreshToken);
 
-      const res = await fetch(url, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password }),
-      });
-
-      if (res.ok) {
-        const user = await res.json();
-
-        if (user && user.username) {
-          dispatch(getUserSuccess(user));
-          history.push("/");
-        }
+      if (
+        localStorage.getItem("refreshToken") &&
+        localStorage.getItem("accessToken")
+      ) {
+        window.location.replace("/");
       }
-    } catch (err) {
-      console.log(err.message);
-      dispatch(getUserFailure(err.message));
+      setLoading(false);
+    } catch (error) {
+      setLoading(false);
+      setError(error.message);
     }
   };
 
@@ -82,9 +72,9 @@ const Login = () => {
               className="form-control"
               id="exampleInputEmail1"
               placeholder="Email address or username"
-              name="userid"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              name="email"
+              value={credentials.email}
+              onChange={handleChange}
             />
           </div>
           <div className="form-group">
@@ -94,8 +84,8 @@ const Login = () => {
               placeholder="Password"
               id="exampleInputPassword1"
               name="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              value={credentials.password}
+              onChange={handleChange}
             />
           </div>
           <div

@@ -11,9 +11,9 @@ const Logout = () => {
         <SpotifyImg maxWidth="130px" />
 
         <div className="d-flex">
-          <Link>Premium</Link>
-          <Link>Support</Link>
-          <Link>Download</Link>
+          <Link to="/Premium">Premium</Link>
+          <Link to="/Support">Support</Link>
+          <Link to="/Download">Download</Link>
           <b></b>
           <Link to="/register">Sign Up</Link>
           <Link to="/login">Log In</Link>

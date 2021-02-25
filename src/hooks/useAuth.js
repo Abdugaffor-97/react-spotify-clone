@@ -10,11 +10,11 @@ const useAuth = () => {
 
   useEffect(() => {
     dispatch(fetchUser());
-    console.log("error", error);
+
     if (error && error.message) {
       history.push("/logout");
     }
-  }, [loading, error]);
+  }, []);
 
   return [userInfos, loading];
 };
