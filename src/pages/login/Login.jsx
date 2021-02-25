@@ -4,7 +4,6 @@ import ContinueWith from "../../components/styled_components/ContinueWith";
 import "./style.scss";
 import SpotifyImg from "../../components/styled_components/SpotifyImg";
 import { CustomAlert, CustomSpinner } from "../../components/styled_components";
-import { setUserInfos } from "../../actions/userActions";
 import { useDispatch } from "react-redux";
 
 const Login = () => {
@@ -34,8 +33,6 @@ const Login = () => {
       if (res.ok) {
         setLoading(false);
         const user = await res.json();
-
-        dispatch(setUserInfos(user));
 
         history.push("/");
       }
