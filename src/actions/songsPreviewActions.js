@@ -28,11 +28,18 @@ export function fetchSongs(artist_name) {
         headers,
       });
 
-      const songs = await response.json();
+      const result = await response.json();
 
-      dispatch(getSongsSuccess(songs));
+      if (result.error) {
+        const error = new Error(result.error.message);
+        error.type = result.error.type;
+        throw error;
+      }
+
+      dispatch(getSongsSuccess(result));
     } catch (error) {
-      dispatch(getSongsFailure(error));
+      // dispatch(getSongsFailure(error));
+      console.log(error);
     }
   };
 }

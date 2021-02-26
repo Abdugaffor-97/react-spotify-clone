@@ -14,7 +14,7 @@ const useAuth = () => {
     if (error && error.message) {
       history.push("/logout");
     }
-  }, []);
+  }, [error]);
 
   return [userInfos, loading];
 };
