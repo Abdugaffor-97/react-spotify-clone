@@ -8,7 +8,7 @@ import NavBar from "./components/NavBar";
 import NavbarVertical from "./components/navbar-vertical";
 import Home from "./pages/home";
 import Album from "./pages/album";
-import Footer from "./components/Footer";
+import Footer from "./components/footer";
 import Register from "./pages/register";
 import Login from "./pages/login";
 import Search from "./pages/search";
