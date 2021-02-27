@@ -12,7 +12,7 @@ const Album = () => {
 
   useEffect(() => {
     dispatch(fetchAlbum("103248"));
-  }, [dispatch]);
+  }, []);
 
   return (
     <div className="album-page main-section" style={{ minHeight: "100vh" }}>

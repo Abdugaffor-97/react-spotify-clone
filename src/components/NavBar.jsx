@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 const NavBar = () => {
-  const user = useSelector((state) => state.user);
+  const { userInfos } = useSelector((state) => state.user);
   return (
     <Navbar
       fixed="top"
@@ -28,9 +28,18 @@ const NavBar = () => {
         </Nav>
         <Nav>
           <NavBtn variant="outline-secondary">UPGRADE</NavBtn>
-          <Dropdown drop="left">
-            <DropdownToggle variant="outline-secondary" id="dropdown-basic">
-              {user.username}
+          <Dropdown>
+            <DropdownToggle
+              style={{ padding: "2px 0px", marginTop: "2px" }}
+              variant="outline-secondary"
+              id="dropdown-basic"
+            >
+              <img
+                alt="user-defauld-img"
+                src={process.env.PUBLIC_URL + "Assets/user.jpg"}
+                style={{ width: "25px", borderRadius: "50%" }}
+              />{" "}
+              {userInfos.username}
             </DropdownToggle>
 
             <Dropdown.Menu>

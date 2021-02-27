@@ -13,7 +13,7 @@ const Tracks = () => {
 
   useEffect(() => {
     dispatch(fetchSongs("eminem"));
-  }, [dispatch]);
+  }, []);
 
   return (
     <div style={{ minHeight: "80vh" }}>

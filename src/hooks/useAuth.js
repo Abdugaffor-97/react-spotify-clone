@@ -1,10 +1,8 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
 import { fetchUser } from "../actions/userActions";
 
 const useAuth = () => {
-  const history = useHistory();
   const { userInfos, loading, error } = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
@@ -12,9 +10,9 @@ const useAuth = () => {
     dispatch(fetchUser());
 
     if (error && error.message) {
-      history.push("/logout");
+      window.location.replace("/logout");
     }
-  }, []);
+  }, [error]);
 
   return [userInfos, loading];
 };
