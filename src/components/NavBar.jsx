@@ -42,7 +42,7 @@ const NavBar = () => {
               {userInfos.username}
             </DropdownToggle>
 
-            <Dropdown.Menu>
+            <Dropdown.Menu style={{ backgroundColor: "#1B1B1A" }}>
               <Dropdown.Item as={Link} to="/account">
                 Account
               </Dropdown.Item>

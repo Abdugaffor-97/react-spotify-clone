@@ -5,6 +5,7 @@ import { withRouter } from "react-router-dom";
 // import { AiOutlinePlayCircle } from "react-icons/ai";
 // import { Jumbotron, Button, Container, Image, Spinner } from "react-bootstrap";
 import { fetchAlbum } from "../../actions/currentAlbumActions";
+import "./style.scss";
 
 const Album = () => {
   // const { album, loading, error } = useSelector((state) => state.currentAlbum);

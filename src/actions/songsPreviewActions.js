@@ -31,14 +31,13 @@ export function fetchSongs(artist_name) {
       const result = await response.json();
 
       if (result.error) {
-        const error = new Error(result.error.message);
-        error.type = result.error.type;
+        const error = new Error(result.error);
         throw error;
       }
 
       dispatch(getSongsSuccess(result));
     } catch (error) {
-      // dispatch(getSongsFailure(error));
+      // dispatch(getSongsFailure(error.message));
       console.log(error);
     }
   };

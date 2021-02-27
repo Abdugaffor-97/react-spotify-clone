@@ -1,6 +1,6 @@
 import React from "react";
 import Tracks from "../../components/Tracks";
-import Protected from "../layouts/Protected";
+import Protected from "../../layouts/Protected";
 
 const Home = () => {
   return (

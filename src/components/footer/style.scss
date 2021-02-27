@@ -1,0 +1,50 @@
+footer {
+  background-color: #282828;
+}
+
+.player-right svg {
+  font-size: 30px;
+}
+
+.player-right .progress {
+  width: 100px;
+}
+.player-center .progress {
+  width: 100%;
+}
+
+.player-center .progress {
+  height: 5px;
+  background: #535353;
+}
+
+.progress div {
+  color: #b3b3b3;
+}
+
+.progress-bar {
+  background: #c2c2c2;
+}
+
+.progress:hover .progress-bar {
+  background: #1db954;
+}
+
+footer svg {
+  font-size: 30px;
+  color: #b3b3b3;
+  margin: 0 10px;
+}
+
+.player-center svg:first-of-type,
+.player-center svg:last-of-type {
+  font-size: 20px;
+}
+
+footer svg:nth-child(3) {
+  font-size: 40px;
+}
+
+footer svg:hover {
+  color: #ffffff;
+}

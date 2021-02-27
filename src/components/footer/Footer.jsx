@@ -6,6 +6,7 @@ import { BiSkipNext, BiSkipPrevious } from "react-icons/bi";
 import { CgPlayList } from "react-icons/cg";
 import { MdDevices } from "react-icons/md";
 import { BsFillVolumeUpFill } from "react-icons/bs";
+import "./style.scss";
 
 const Footer = () => {
   return (
