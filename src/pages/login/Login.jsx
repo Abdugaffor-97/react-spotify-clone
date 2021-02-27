@@ -7,7 +7,6 @@ import { Alert, Spinner } from "react-bootstrap";
 import fetchBe from "../../client/axios";
 
 const Login = () => {
-  // const history = useHistory();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -58,7 +57,7 @@ const Login = () => {
           <ContinueWith
             title="Continue with Google"
             className="btn btn-google btn-lg btn-block"
-            loginWith={process.env.REACT_APP_API_URL + "/users/googleLogin"}
+            loginWith={process.env.REACT_APP_API_URL + "/users/google-login"}
           />
         </div>
         <div className="divide" style={{ marginBottom: "30px" }}>

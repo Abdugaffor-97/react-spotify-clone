@@ -28,8 +28,17 @@ const NavBar = () => {
         </Nav>
         <Nav>
           <NavBtn variant="outline-secondary">UPGRADE</NavBtn>
-          <Dropdown drop="left">
-            <DropdownToggle variant="outline-secondary" id="dropdown-basic">
+          <Dropdown>
+            <DropdownToggle
+              style={{ padding: "2px 0px", marginTop: "2px" }}
+              variant="outline-secondary"
+              id="dropdown-basic"
+            >
+              <img
+                alt="user-defauld-img"
+                src={process.env.PUBLIC_URL + "Assets/user.jpg"}
+                style={{ width: "25px", borderRadius: "50%" }}
+              />{" "}
               {userInfos.username}
             </DropdownToggle>
 
