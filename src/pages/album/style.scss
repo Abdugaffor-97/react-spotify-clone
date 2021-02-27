@@ -1,0 +1,28 @@
+.album-page .jumbotron {
+  background: linear-gradient(#407e9c, #202020);
+}
+
+.album-page i {
+  transition: all 0.01s ease-in-out;
+}
+
+.album-page i:hover {
+  transform: scale(1.05);
+}
+
+.album-page button {
+  height: 35px;
+}
+
+.album-page .trackHover:hover {
+  background-color: #2a2a2a;
+  cursor: pointer;
+}
+
+.album-page .trackHover a {
+  text-decoration: none;
+}
+
+.album-page h1 {
+  font-size: default;
+}
