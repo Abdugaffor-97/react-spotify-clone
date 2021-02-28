@@ -1,14 +1,16 @@
 footer {
   background-color: #282828;
+  height: "70px";
+  z-index: 10;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 .player-right svg {
   font-size: 30px;
 }
 
-.player-right .progress {
-  width: 100px;
-}
 .player-center .progress {
   width: 100%;
 }
@@ -47,4 +49,31 @@ footer svg:nth-child(3) {
 
 footer svg:hover {
   color: #ffffff;
+}
+
+#player {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  #player-center {
+    min-width: 600px;
+  }
+
+  #player-right {
+    min-width: 200px;
+    .progress {
+      width: 100px;
+      height: 7px;
+      margin: 6px 6px 0 0;
+    }
+
+    .progress-bar {
+      background: #c2c2c2;
+    }
+
+    .progress:hover .progress-bar {
+      background: #1db954;
+    }
+  }
 }
