@@ -1,23 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { DropdownToggle, NavBtn } from "../styled_components/Button";
 import { Navbar, Nav, Dropdown } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { BsSearch } from "react-icons/bs";
+
 import "./style.scss";
 
 const NavBar = () => {
   const { userInfos } = useSelector((state) => state.user);
   const history = useHistory();
+  const [height, setHeight] = useState(window.scrollY);
+
+  useEffect(() => {
+    window.onscroll = () => setHeight(window.scrollY);
+
+    return window.removeEventListener("scroll", setHeight);
+  }, [height]);
 
   return (
     <Navbar
+      className={height > 60 && "on-scroll"}
       fixed="top"
       collapseOnSelect
       expand="sm"
       style={{
-        left: "225px",
+        left: "234px",
       }}
       id="nav"
     >
