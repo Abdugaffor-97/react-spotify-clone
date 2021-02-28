@@ -4,7 +4,7 @@ import "./App.scss";
 
 import { Route, withRouter } from "react-router-dom";
 
-import NavBar from "./components/NavBar";
+import NavBar from "./components/navbar";
 import NavbarVertical from "./components/navbar-vertical";
 import Home from "./pages/home";
 import Album from "./pages/album";

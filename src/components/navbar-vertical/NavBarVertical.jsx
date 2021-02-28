@@ -1,5 +1,4 @@
 import React from "react";
-import { Component } from "react";
 import { Button } from "react-bootstrap";
 import Link from "../styled_components/Link"; //styled_components/Link
 import { AiFillHome, AiOutlineSearch, AiFillHeart } from "react-icons/ai";
@@ -9,77 +8,83 @@ import { GiPlainArrow } from "react-icons/gi";
 import "./style.scss";
 import SpotifyLogo from "../styled_components/SpotifyImg";
 
-class NavbarVertival extends Component {
-  render() {
-    return (
-      <div className="navbar-vertical">
-        <section>
-          <SpotifyLogo maxWidth="140px" />
-        </section>
+const NavbarVertival = () => {
+  return (
+    <div className="navbar-vertical">
+      <section>
+        <SpotifyLogo maxWidth="140px" />
+      </section>
 
-        <section>
-          <div className="current-page">
-            <Link to="/">
-              <AiFillHome />
-              <h1 className="mx-2">Home</h1>
-            </Link>
-          </div>
+      <section>
+        <div className={window.location.pathname === "/" && "current-page"}>
+          <Link to="/">
+            <h1 className="mx-2">
+              <AiFillHome /> Home
+            </h1>
+          </Link>
+        </div>
+        <div
+          className={window.location.pathname === "/search" && "current-page"}
+        >
+          <Link to="/search">
+            <h1 className="mx-2">
+              <AiOutlineSearch /> Search
+            </h1>
+          </Link>
+        </div>
+        <div
+          className={window.location.pathname === "/library" && "current-page"}
+        >
+          <Link to="/library">
+            <h1 className="mx-2">
+              <VscLibrary /> Your library
+            </h1>
+          </Link>
+        </div>
+      </section>
 
-          <div>
-            <Link to="/search">
-              <AiOutlineSearch />
-              <h1 className="mx-2">Search</h1>
-            </Link>
-          </div>
+      <section>
+        <h1>PLAYLISTS</h1>
 
-          <div>
-            <Link to="/library">
-              <VscLibrary />
-              <h1 className="mx-2">Your library</h1>
-            </Link>
-          </div>
-        </section>
+        <div>
+          <Link to="/playlist">
+            <h1>
+              <BsPlus /> Create Playlist
+            </h1>
+          </Link>
+        </div>
 
-        <section>
-          <h1>PLAYLISTS</h1>
+        <div>
+          <Link to="/linked-songs">
+            <h1>
+              {" "}
+              <AiFillHeart /> Linked Songs
+            </h1>
+          </Link>
+        </div>
+        <div className="border-bottom border-secondary"></div>
+      </section>
 
-          <div>
-            <Link to="/playlist">
-              <BsPlus />
-              <h1>Create Playlist</h1>
-            </Link>
-          </div>
-
-          <div>
-            <Link to="/linked-songs">
-              <AiFillHeart />
-              <h1>Linked Songs</h1>
-            </Link>
-          </div>
-          <div className="border-bottom border-secondary"></div>
-        </section>
-
-        <section className="playlist">
-          <p>Lorem ipsum dolor sit.</p>
-          <p>Lorem ipsum dolor sit.</p>
-          <p>Lorem ipsum dolor sit.</p>
-          <p>Lorem ipsum dolor sit.</p>
-          <p>Lorem ipsum dolor sit.</p>
-        </section>
-        <section>
-          <Button
-            style={{
-              width: "200px",
-            }}
-          >
-            {" "}
-            <GiPlainArrow />
-            Install
-          </Button>
-        </section>
-      </div>
-    );
-  }
-}
+      <section className="playlist">
+        <p>Lorem ipsum dolor sit.</p>
+        <p>Lorem ipsum dolor sit.</p>
+        <p>Lorem ipsum dolor sit.</p>
+        <p>Lorem ipsum dolor sit.</p>
+        <p>Lorem ipsum dolor sit.</p>
+      </section>
+      <section>
+        <Button
+          style={{
+            width: "200px",
+          }}
+        >
+          {" "}
+          <GiPlainArrow />
+          Install
+        </Button>
+      </section>
+    </div>
+  );
+};
 
 export default NavbarVertival;

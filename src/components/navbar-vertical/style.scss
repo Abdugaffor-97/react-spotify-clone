@@ -12,24 +12,32 @@
   user-select: none;
   cursor: default;
   background-color: #000000;
+
+  h1 {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+    letter-spacing: 0.1rem;
+    margin-left: 20px;
+    margin-top: 10px;
+    display: inline-block;
+  }
+
+  section {
+    margin: 20px 10px 0px 20px;
+  }
+
+  a {
+    padding: 0px 100% 0px 5px;
+  }
+
+  a.navlink {
+    padding: 0;
+  }
 }
 
-.navbar-vertical section {
-  margin: 20px 20px 0px;
-  cursor: pointer;
-}
-
-.navbar-vertical a.navlink {
-  padding: 0;
-}
-
-.navbar-vertical a {
-  line-height: 40px;
+a {
   width: 235px;
-}
-
-.navbar-vertical a:hover {
-  border-bottom: none;
 }
 
 .navbar-vertical svg,
@@ -52,16 +60,6 @@
 
 .navbar-vertical .fas.fa-heart {
   background-color: rgb(65, 39, 167);
-}
-
-.navbar-vertical h1 {
-  font-size: 12px;
-  font-weight: 700;
-  line-height: 16px;
-  letter-spacing: 0.1rem;
-  margin-left: 20px;
-  margin-top: 20px;
-  display: inline;
 }
 
 .current-page {
