@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 import ContinueWith from "../../components/styled_components/ContinueWith";
 import "./style.scss";
 import SpotifyImg from "../../components/styled_components/SpotifyImg";
-import { Alert, Spinner } from "react-bootstrap";
-import fetchBe from "../../client/axios";
+import { Spinner } from "react-bootstrap";
+import fetchBe from "../../client/fetchBe";
+import { DangerAlert } from "../../components/styled_components";
 
 const Login = () => {
   const [loading, setLoading] = useState(false);
@@ -115,8 +116,7 @@ const Login = () => {
           <a href="#ssss">Forgot your Password ?</a>
         </div>
         <hr />
-        {/* {error.length > 0 && <CustomAlert messsage={error[0]} />} */}
-        {error && error.length > 0 && <Alert variant="danger">{error}</Alert>}
+        {error && <DangerAlert messsage={error} />}
         <div>
           <div className="row" style={{ textAlign: "center" }}>
             <div className="col-12 mb-3">

@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./style.scss";
 import ContinueWith from "../../components/styled_components/ContinueWith";
-import { Container } from "react-bootstrap";
+import { Container, Spinner } from "react-bootstrap";
 import SpotifyImg from "../../components/styled_components/SpotifyImg";
 import { useHistory } from "react-router-dom";
-import { CustomAlert } from "../../components/styled_components";
+import { DangerAlert } from "../../components/styled_components";
 
 const Register = () => {
   const history = useHistory();
@@ -160,7 +160,7 @@ const Register = () => {
 
           <div>
             {loading ? (
-              <h1>Loading...</h1>
+              <Spinner animation="border" />
             ) : (
               <button
                 className="btn btn-success btn-lg"
@@ -171,7 +171,7 @@ const Register = () => {
             )}
           </div>
         </form>
-        {error && <CustomAlert messsage={error} />}
+        {error && <DangerAlert messsage={error} />}
         <p className="mt-3">
           Have an account? <Link to="/login">Log in.</Link>
         </p>

@@ -3,7 +3,7 @@ import Track from "./Track";
 import { Row, Col } from "react-bootstrap";
 import { fetchSongs } from "../actions/songsPreviewActions";
 import { useSelector } from "react-redux";
-import { CustomAlert, CustomSpinner } from "../components/styled_components";
+import { CustomSpinner, DangerAlert } from "../components/styled_components";
 import { useDispatch } from "react-redux";
 
 const Tracks = () => {
@@ -12,16 +12,16 @@ const Tracks = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchSongs("eminem"));
-  }, [loading, songs, error]);
+    dispatch(fetchSongs());
+  }, [dispatch]);
 
   return (
     <div style={{ minHeight: "80vh" }}>
       <div className="mx-3">
         {loading && <CustomSpinner />}
-        {error && <CustomAlert error={error.message} />}
+        {error && <DangerAlert messsage={error} />}
 
-        {songs.total && (
+        {songs && songs.total && (
           <>
             <h2 className="pl-3 text-white">{songs.data[0].artist.name}</h2>
             <Row xs={1} sm={2} md={3} lg={4} xl={6}>
