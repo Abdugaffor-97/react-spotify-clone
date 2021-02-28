@@ -1,3 +1,4 @@
+import fetchMian from "../client/fetchMain";
 import { current_album_action_types as C } from "./constants";
 
 export const getAlbum = () => ({
@@ -14,26 +15,15 @@ export const getAlbumFailure = (error) => ({
   payload: error,
 });
 
-export function fetchAlbum(album_id) {
+export function fetchAlbum(album_id = "119606") {
   return async (dispatch) => {
     dispatch(getAlbum());
 
     try {
-      const url = `https://deezerdevs-deezer.p.rapidapi.com/album/${album_id}`;
-      const headers = new Headers({
-        "x-rapidapi-key": process.env.RAPID_API_KEY_VAL,
-        "x-rapidapi-host": process.env.RAPID_API_HOST,
-      });
-      const response = await fetch(url, {
-        method: "GET",
-        headers,
-      });
-
-      const album = await response.json();
-
-      dispatch(getAlbumSuccess(album));
+      const { data } = await fetchMian.get("/album/" + album_id);
+      dispatch(getAlbumSuccess(data));
     } catch (error) {
-      dispatch(getAlbumFailure(error));
+      dispatch(getAlbumFailure(error.message));
     }
   };
 }

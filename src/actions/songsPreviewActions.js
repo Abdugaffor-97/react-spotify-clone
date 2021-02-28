@@ -1,3 +1,4 @@
+import fetchMian from "../client/fetchMain";
 import { songs_preview_action_types as C } from "./constants";
 
 export const getSongs = () => ({
@@ -14,31 +15,14 @@ export const getSongsFailure = (error) => ({
   payload: error,
 });
 
-export function fetchSongs(artist_name) {
+export function fetchSongs(artist_name = "eminem") {
   return async (dispatch) => {
     dispatch(getSongs());
     try {
-      const url = `https://deezerdevs-deezer.p.rapidapi.com/search?q=${artist_name}`;
-      const headers = new Headers({
-        "x-rapidapi-key": process.env.REACT_APP_RAPID_API_KEY,
-        "x-rapidapi-host": process.env.REACT_APP_RAPID_API_HOST,
-      });
-      const response = await fetch(url, {
-        method: "GET",
-        headers,
-      });
-
-      const result = await response.json();
-
-      if (result.error) {
-        const error = new Error(result.error);
-        throw error;
-      }
-
-      dispatch(getSongsSuccess(result));
+      const { data } = await fetchMian.get("/search?q=" + artist_name);
+      dispatch(getSongsSuccess(data));
     } catch (error) {
-      // dispatch(getSongsFailure(error.message));
-      console.log(error);
+      dispatch(getSongsFailure(error.message));
     }
   };
 }

@@ -1,5 +1,5 @@
 import { user_action_types as C } from "./constants";
-import fetchBe from "../client/axios";
+import fetchBe from "../client/fetchBe";
 
 export const getUser = () => ({
   type: C.GET_USER,
