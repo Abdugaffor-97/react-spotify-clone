@@ -35,16 +35,40 @@ $bg_color: #2d46b9;
       border-left: 2px solid $main_color;
       height: 30px;
     }
+
+    #nav-item {
+      display: flex;
+      flex-flow: row wrap;
+      /* This aligns items to the end line on main-axis */
+      justify-content: flex-end;
+
+      a {
+        color: white;
+        margin: 0 10px;
+        font-weight: 600;
+        padding: 0;
+        width: 100px;
+      }
+
+      a:hover {
+        color: $main_color;
+        text-decoration: none;
+      }
+    }
   }
 
-  a {
-    color: white;
-    margin: 0 10px;
-    font-weight: 600;
+  @media all and (max-width: 800px) {
+    #nav-item {
+      /* When on medium sized screens, we center it by evenly distributing empty space around items */
+      justify-content: space-around;
+    }
   }
 
-  a:hover {
-    color: $main_color;
-    text-decoration: none;
+  /* Small screens */
+  @media all and (max-width: 500px) {
+    #nav-item {
+      /* On small screens, we are no longer using row direction but column */
+      flex-direction: column;
+    }
   }
 }

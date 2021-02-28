@@ -8,12 +8,11 @@ const Logout = () => {
   return (
     <div id="logout">
       <div id="nav">
-      <div>
-        <SpotifyImg maxWidth="130px" />
-      </div>
+        <div>
+          <SpotifyImg maxWidth="130px" />
+        </div>
 
-
-        <div className="d-flex">
+        <div id="nav-item">
           <Link to="/Premium">Premium</Link>
           <Link to="/Support">Support</Link>
           <Link to="/Download">Download</Link>
