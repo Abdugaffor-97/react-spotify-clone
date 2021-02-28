@@ -13,6 +13,7 @@ import Register from "./pages/register";
 import Login from "./pages/login";
 import Search from "./pages/search";
 import Logout from "./pages/logout";
+import Profile from "./pages/profile";
 
 function App({ location }) {
   return (
@@ -35,6 +36,7 @@ function App({ location }) {
         <Route path="/" exact component={Home} />
         <Route path="/album/:id/" exact component={Album} />
         <Route path="/search" exact component={Search} />
+        <Route path="/profile" exact component={Profile} />
       </div>
     </div>
   );

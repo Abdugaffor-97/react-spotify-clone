@@ -1,0 +1,15 @@
+body {
+  background: linear-gradient(#202020, #111111);
+  min-height: 100vh;
+
+  // * {
+  //   background: inherit;
+  // }
+}
+
+.jumbotron {
+  display: flex;
+  img {
+    border-radius: 50%;
+  }
+}

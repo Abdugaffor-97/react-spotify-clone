@@ -7,8 +7,8 @@ const Search = () => {
     <div id="list">
       {data.items.map((item, idx) => (
         <div key={idx} id="item">
-          <h5>{item.name}</h5>
           <img src={item.icons[0].url} alt={item.name} />
+          <h5>{item.name}</h5>
         </div>
       ))}
     </div>

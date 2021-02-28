@@ -17,8 +17,7 @@ const NavBar = () => {
       collapseOnSelect
       expand="sm"
       style={{
-        left: "235px",
-        backgroundColor: "#121212",
+        left: "225px",
       }}
       id="nav"
     >
