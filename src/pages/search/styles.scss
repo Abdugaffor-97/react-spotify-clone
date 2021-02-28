@@ -1,0 +1,16 @@
+#list {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+  min-width: 500px;
+}
+
+#item {
+  img {
+    max-height: 245px;
+    max-width: 245px;
+    margin: 3px;
+    border-radius: 5px;
+    width: 10vw;
+  }
+}
