@@ -16,52 +16,53 @@ const NavbarVertival = () => {
       </section>
 
       <section>
-        <div className={window.location.pathname === "/" && "current-page"}>
-          <Link to="/">
-            <h1 className="mx-2">
-              <AiFillHome /> Home
-            </h1>
-          </Link>
-        </div>
-        <div
-          className={window.location.pathname === "/search" && "current-page"}
+        <Link
+          to="/"
+          className={window.location.pathname === "/" ? "current-page" : ""}
         >
-          <Link to="/search">
-            <h1 className="mx-2">
-              <AiOutlineSearch /> Search
-            </h1>
-          </Link>
-        </div>
-        <div
-          className={window.location.pathname === "/library" && "current-page"}
+          <h1 className="mx-2">
+            <AiFillHome /> Home
+          </h1>
+        </Link>
+
+        <Link
+          to="/search"
+          className={
+            window.location.pathname === "/search" ? "current-page" : ""
+          }
         >
-          <Link to="/library">
-            <h1 className="mx-2">
-              <VscLibrary /> Your library
-            </h1>
-          </Link>
-        </div>
+          <h1 className="mx-2">
+            <AiOutlineSearch /> Search
+          </h1>
+        </Link>
+
+        <Link
+          to="/library"
+          className={
+            window.location.pathname === "/library" ? "current-page" : ""
+          }
+        >
+          <h1 className="mx-2">
+            <VscLibrary /> Your library
+          </h1>
+        </Link>
       </section>
 
       <section>
         <h1>PLAYLISTS</h1>
 
-        <div>
-          <Link to="/playlist">
-            <h1>
-              <BsPlus /> Create Playlist
-            </h1>
-          </Link>
-        </div>
+        <Link to="/playlist">
+          <h1>
+            <BsPlus /> Create Playlist
+          </h1>
+        </Link>
 
-        <div>
-          <Link to="/linked-songs">
-            <h1>
-              {" "}
-              <AiFillHeart /> Linked Songs
-            </h1>
-          </Link>
-        </div>
+        <Link to="/linked-songs">
+          <h1>
+            {" "}
+            <AiFillHeart /> Linked Songs
+          </h1>
+        </Link>
         <div className="border-bottom border-secondary"></div>
       </section>
 

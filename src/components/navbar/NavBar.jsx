@@ -32,7 +32,6 @@ const NavBar = () => {
     >
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
-          {/* <Nav.Link as={Link} to="/"> */}
           <IoIosArrowBack
             color="white"
             size={29}

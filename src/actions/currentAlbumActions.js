@@ -20,8 +20,9 @@ export function fetchAlbum(album_id = "119606") {
     dispatch(getAlbum());
 
     try {
-      const { data } = await fetchMian.get("/album/" + album_id);
-      dispatch(getAlbumSuccess(data));
+      const result = await fetchMian.get("/album/" + album_id);
+      console.log(result);
+      dispatch(getAlbumSuccess(result.data));
     } catch (error) {
       dispatch(getAlbumFailure(error.message));
     }
