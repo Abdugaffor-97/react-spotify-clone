@@ -10,7 +10,7 @@ import "./style.scss";
 import { useSelector } from "react-redux";
 
 const Footer = () => {
-  const { avatar, artist_name, track_name } = useSelector(
+  const { avatar, artist_name, title } = useSelector(
     (state) => state.currentTrack
   );
 
@@ -19,9 +19,14 @@ const Footer = () => {
       {avatar && (
         <div id="player">
           <div id="player-left">
-            <img alt="img" src={avatar} />
-            <span>{track_name}</span>
-            <h6>{artist_name}</h6>
+            <img
+              alt="img"
+              src={`https://e-cdns-images.dzcdn.net/images/cover/${avatar}/56x56-000000-80-0-0.jpg`}
+            />
+            <div>
+              <b>{title}</b>
+              <b>{artist_name}</b>
+            </div>
           </div>
 
           <div id="player-center">
@@ -38,7 +43,7 @@ const Footer = () => {
                   <b className="text-white"> 0:00 </b>
                 </div>
                 <ProgressBar now={90} />
-                <audio></audio>
+                <audio id="audio"></audio>
                 <div>
                   <b className="text-white"> 10:30 </b>
                 </div>

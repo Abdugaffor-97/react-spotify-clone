@@ -2,8 +2,10 @@ import { current_track_action_types as c } from "../actions/constants";
 
 const initialState = {
   avatar: null,
+  duration: 0,
+  preview: null,
+  title: null,
   artist_name: null,
-  track_name: null,
 };
 
 export default function currentTrackreducer(state = initialState, action) {
