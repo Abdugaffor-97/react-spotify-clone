@@ -36,6 +36,7 @@ const Tracks = () => {
                     artistName={track.artist.name}
                     id={track.album.id}
                     preview={track.preview}
+                    avatar={track.md5_image}
                   />
                 </Col>
               ))}
