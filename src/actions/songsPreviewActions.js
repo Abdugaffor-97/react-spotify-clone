@@ -25,13 +25,12 @@ export function fetchSongs(artist_name = "eminem") {
         const error = new Error(res.data.error.message);
         error.statusCode = res.data.error.message.code;
         error.type = res.data.error.type;
-
         throw error;
       }
 
       dispatch(getSongsSuccess(res.data));
     } catch (error) {
-      dispatch(getSongsFailure(error.message));
+      dispatch(getSongsFailure(error.message + " PLEASE REFRESH THE PAGE"));
     }
   };
 }
