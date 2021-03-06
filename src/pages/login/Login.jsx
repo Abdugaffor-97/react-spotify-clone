@@ -6,6 +6,7 @@ import SpotifyImg from "../../components/styled_components/SpotifyImg";
 import { Spinner } from "react-bootstrap";
 import fetchBe from "../../client/fetchBe";
 import { DangerAlert } from "../../components/styled_components";
+import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
   const [loading, setLoading] = useState(false);
@@ -21,9 +22,10 @@ const Login = () => {
     setLoading(true);
 
     try {
-      const { data } = await fetchBe.post("/users/login", credentials);
-      localStorage.setItem("accessToken", data.accessToken);
-      localStorage.setItem("refreshToken", data.refreshToken);
+      const res = await fetchBe.post("/users/login", credentials);
+      console.log("res", res);
+      localStorage.setItem("accessToken", res.data.accessToken);
+      localStorage.setItem("refreshToken", res.data.refreshToken);
 
       if (
         localStorage.getItem("refreshToken") &&
@@ -34,7 +36,8 @@ const Login = () => {
       setLoading(false);
     } catch (error) {
       setLoading(false);
-      setError(error.message);
+
+      setError(error.response.data);
     }
   };
 
@@ -47,23 +50,26 @@ const Login = () => {
           <div className="col-12" style={{ color: "white" }}>
             <strong>To continue, log in to Spotify</strong>
           </div>
-          <ContinueWith
+          {/* <ContinueWith
             title="Continue with Facebook"
             className="btn btn-facebook btn-lg btn-block"
           />
           <ContinueWith
             title="Continue with Apple"
             className="btn btn-apple btn-lg btn-block"
-          />
+          /> */}
+
           <ContinueWith
             title="Continue with Google"
-            className="btn btn-google btn-lg btn-block"
+            className="btn-google btn-lg custom-btn"
             loginWith={process.env.REACT_APP_API_URL + "/users/google-login"}
+            icon={<FcGoogle size={22} />}
           />
         </div>
         <div className="divide" style={{ marginBottom: "30px" }}>
           <strong className="divide-Text">Or</strong>
         </div>
+        {error && <DangerAlert messsage={error} />}
 
         <form onSubmit={submitUser}>
           <div className="form-group">
@@ -116,7 +122,7 @@ const Login = () => {
           <a href="#ssss">Forgot your Password ?</a>
         </div>
         <hr />
-        {error && <DangerAlert messsage={error} />}
+
         <div>
           <div className="row" style={{ textAlign: "center" }}>
             <div className="col-12 mb-3">

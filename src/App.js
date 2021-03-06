@@ -22,9 +22,9 @@ function App({ location }) {
       <Route path="/login" exact component={Login} />
       <Route path="/logout" exact component={Logout} />
 
-      {location.pathname !== "/login" &&
-        location.pathname !== "/register" &&
-        location.pathname !== "/logout" && (
+      {location.pathname === "/login" ||
+        location.pathname === "/register" ||
+        location.pathname === "/logout" || (
           <>
             <NavbarVertical />
             <NavBar />
