@@ -29,7 +29,7 @@ Features: - Homepage, Album page, Artist page - When clicking on a song, the nam
 .env variables
 
 
--REACT_APP_API_URL=http://localhost:3001/api
--REACT_APP_RAPID_API_KEY=rapidapikey
--REACT_APP_RAPID_API_HOST=rapidapihos
+- REACT_APP_API_URL=http://localhost:3001/api
+- REACT_APP_RAPID_API_KEY=rapidapikey
+- REACT_APP_RAPID_API_HOST=rapidapihos
 
