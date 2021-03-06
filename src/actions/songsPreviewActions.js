@@ -19,8 +19,17 @@ export function fetchSongs(artist_name = "eminem") {
   return async (dispatch) => {
     dispatch(getSongs());
     try {
-      const { data } = await fetchMian.get("/search?q=" + artist_name);
-      dispatch(getSongsSuccess(data));
+      const res = await fetchMian.get("/search?q=" + artist_name);
+
+      if (res.data.error) {
+        const error = new Error(res.data.error.message);
+        error.statusCode = res.data.error.message.code;
+        error.type = res.data.error.type;
+
+        throw error;
+      }
+
+      dispatch(getSongsSuccess(res.data));
     } catch (error) {
       dispatch(getSongsFailure(error.message));
     }
