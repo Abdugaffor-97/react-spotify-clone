@@ -56,10 +56,10 @@ const Album = () => {
                       dispatch(
                         setCurrentTrack({
                           avatar: track.md5_image,
-                          duration: track.duration,
                           preview: track.preview,
                           title: track.title,
                           artist_name: album.artist.name,
+                          isPlaying: true,
                         })
                       );
                     }}
