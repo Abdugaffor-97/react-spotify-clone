@@ -12,7 +12,9 @@ const Tracks = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchSongs());
+    if (!songs.data) {
+      dispatch(fetchSongs());
+    }
   }, [dispatch]);
 
   return (
