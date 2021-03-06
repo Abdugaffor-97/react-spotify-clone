@@ -24,3 +24,11 @@ Features: - Homepage, Album page, Artist page - When clicking on a song, the nam
 - Include login with Spotify
 - [EXTRA] Refresh token technique
 - [EXTRA] Include login with Facebook
+
+
+.env variables
+REACT_APP_API_URL=http://localhost:3001/api
+
+REACT_APP_RAPID_API_KEY=rapidapikey
+REACT_APP_RAPID_API_HOST=rapidapihos
+
