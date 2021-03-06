@@ -8,8 +8,10 @@ const useTogglePlay = () => {
 
   const togglePlay = () => {
     const audio = document.querySelector("audio");
-    dispatch(togglePlaySong());
-    isPlaying ? audio.play() : audio.pause();
+    if (audio) {
+      dispatch(togglePlaySong());
+      isPlaying ? audio.play() : audio.pause();
+    }
   };
 
   return togglePlay;

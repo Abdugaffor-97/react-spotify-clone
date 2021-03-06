@@ -3,10 +3,12 @@ import { withRouter } from "react-router-dom";
 import { Image } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { setCurrentTrack } from "../actions/currentTrackActions";
+import useTogglePlay from "../hooks/useTogglePlay";
 
 const Track = (props) => {
   // console.log(props);
   const dispatch = useDispatch();
+  const togglePlay = useTogglePlay();
   return (
     <div
       className="track-container"
@@ -16,7 +18,7 @@ const Track = (props) => {
         <Image style={{ borderRadius: "10px", width: "85%" }} src={props.img} />
         <div
           className="play-btn-cover"
-          onClick={() =>
+          onClick={() => {
             dispatch(
               setCurrentTrack({
                 avatar: props.avatar,
@@ -25,8 +27,9 @@ const Track = (props) => {
                 artist_name: props.artistName,
                 isPlaying: true,
               })
-            )
-          }
+            );
+            togglePlay();
+          }}
         >
           <div className="play-btn">
             <div className="corner"></div>
