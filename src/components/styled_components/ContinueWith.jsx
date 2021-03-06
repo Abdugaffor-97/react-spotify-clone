@@ -1,12 +1,15 @@
 import React from "react";
 
-export default function SignUpWithFacebook({ title, className, loginWith }) {
+export default function SignUpWithFacebook({
+  title,
+  className,
+  loginWith,
+  icon,
+}) {
   return (
-    <div className="col-12 my-1">
-      <a className={className} href={loginWith}>
-        <i className="fab fa-facebook"></i>
-        {title}
-      </a>
+    <div className={className}>
+      {icon}
+      <a href={loginWith}>{title}</a>
     </div>
   );
 }

@@ -9,8 +9,8 @@ import { CustomSpinner, DangerAlert } from "../../components/styled_components";
 import { setCurrentTrack } from "../../actions/currentTrackActions";
 
 const Album = () => {
-  const { currentAlbum, currentTrack } = useSelector((state) => state);
-  const { album, loading, error } = currentAlbum;
+  const { album, loading, error } = useSelector((state) => state.currentAlbum);
+
   const dispatch = useDispatch();
   console.log(album);
 
@@ -56,15 +56,12 @@ const Album = () => {
                       dispatch(
                         setCurrentTrack({
                           avatar: track.md5_image,
-                          duration: track.duration,
                           preview: track.preview,
                           title: track.title,
                           artist_name: album.artist.name,
+                          isPlaying: true,
                         })
                       );
-                      // const audio = document.querySelector("#audio");
-                      // audio.src = track.preview;
-                      // audio.play();
                     }}
                     size={32}
                     style={{ color: "white", cursor: "default" }}

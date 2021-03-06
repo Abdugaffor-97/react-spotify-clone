@@ -4,12 +4,9 @@ import "./style.scss";
 import ContinueWith from "../../components/styled_components/ContinueWith";
 import { Container, Spinner } from "react-bootstrap";
 import SpotifyImg from "../../components/styled_components/SpotifyImg";
-import { useHistory } from "react-router-dom";
 import { DangerAlert } from "../../components/styled_components";
 
 const Register = () => {
-  const history = useHistory();
-
   const [email, setEmail] = useState("");
   const [password1, setPassword1] = useState("");
   const [password2, setPassword2] = useState("");
@@ -33,13 +30,13 @@ const Register = () => {
 
       if (res.ok) {
         setLoading(false);
-        history.push("/login");
+        window.location.replace("/login");
       }
 
-      console.log(res);
+      // console.log(res);
     } catch (error) {
       setLoading(false);
-      setError(error);
+      setError(error.messsage);
     }
   };
 

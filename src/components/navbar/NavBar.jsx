@@ -66,7 +66,7 @@ const NavBar = () => {
               <input
                 type="text"
                 name=""
-                id="search"
+                id="search-input"
                 placeholder="Artists, songs or podcasts"
               />
             </div>

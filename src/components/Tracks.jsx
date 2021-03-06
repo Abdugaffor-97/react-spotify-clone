@@ -12,7 +12,9 @@ const Tracks = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchSongs());
+    if (!songs.data) {
+      dispatch(fetchSongs());
+    }
   }, [dispatch]);
 
   return (
@@ -34,6 +36,7 @@ const Tracks = () => {
                     artistName={track.artist.name}
                     id={track.album.id}
                     preview={track.preview}
+                    avatar={track.md5_image}
                   />
                 </Col>
               ))}

@@ -19,4 +19,5 @@ export const user_action_types = {
 
 export const current_track_action_types = {
   SET_CURRENT_TRACK: "SET_CURRENT_TRACK",
+  TOGGLE_PLAY_SONG: "TOGGLE_PLAY_SONG",
 };
